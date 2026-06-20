@@ -1,0 +1,6836 @@
+{
+ "weeks": [
+  {
+   "id": "W1",
+   "title": "적응기 베이스라인",
+   "days": [
+    {
+     "label": "W1D1 (Push 1)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 50
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 40
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Flat Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 20
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 40
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Overhead Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 30
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 20
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 10
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 5
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 5
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W1D2 (Pull 1)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 50
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 70
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 65
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 45
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 40
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 47.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 47.5
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Seated Cable Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 40
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 20
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 10
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W1D3 (Push 2)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 50
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Flat Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 40
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 50
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Overhead Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 30
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 25
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 10
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 5
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 5
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W1D4 (Pull 2)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 70
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 65
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 57.5
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 42.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 40
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 35
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 47.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 47.5
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Seated Cable Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 40
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 20
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 10
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "W2",
+   "title": "볼륨 누적 1",
+   "days": [
+    {
+     "label": "W2D1 (Push 1)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 50
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 40
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Flat Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 40
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 50
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Overhead Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 32.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 30
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 27.5
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 10
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 5
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 5
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      },
+      {
+       "name": "Notes 260602",
+       "type": "work",
+       "sets": []
+      }
+     ]
+    },
+    {
+     "label": "W2D2 (Pull 1)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 50
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 70
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 60
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 45
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 60
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 60
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Seated Cable Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 40
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 20
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 10
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      },
+      {
+       "name": "Notes 260611",
+       "type": "work",
+       "sets": []
+      }
+     ]
+    },
+    {
+     "label": "W2D3 (Push 2)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 55
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 52.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 47.5
+        }
+       ]
+      },
+      {
+       "name": "Incline Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 40
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 40
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Overhead Smith Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 30
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 30
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 27.5
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 10
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 5
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 5
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      },
+      {
+       "name": "Notes 260612",
+       "type": "work",
+       "sets": []
+      }
+     ]
+    },
+    {
+     "label": "W2D4 (Pull 2)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 70
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 65
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 60
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 45
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 40
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 35
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 28
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 28
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 25
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 25
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 10
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      },
+      {
+       "name": "Notes 260618",
+       "type": "work",
+       "sets": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "W3",
+   "title": "볼륨 누적 2",
+   "days": [
+    {
+     "label": "W3D1 (Push 1)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 50
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Flat Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 50
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Overhead Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 35
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 32.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 30
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 12.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 12.5
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 17.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 17.5
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 7.5
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 7.5
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 17.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 17.5
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W3D2 (Pull 1)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 72.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 67.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 60
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 45
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 42.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 37.5
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 47.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 47.5
+        }
+       ]
+      },
+      {
+       "name": "Seated Cable Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 42.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 42.5
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 22.5
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 22.5
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 12.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 12.5
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W3D3 (Push 2)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 57.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 52.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 47.5
+        }
+       ]
+      },
+      {
+       "name": "Flat Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 57.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 52.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 47.5
+        }
+       ]
+      },
+      {
+       "name": "Overhead Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 35
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 32.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 30
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 12.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 12.5
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 17.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 17.5
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 7.5
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 7.5
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 17.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 17.5
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W3D4 (Pull 2)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 72.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 67.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 60
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 45
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 42.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 37.5
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 47.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 47.5
+        }
+       ]
+      },
+      {
+       "name": "Seated Cable Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 42.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 42.5
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 22.5
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 22.5
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 12.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 12.5
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "W4",
+   "title": "디로드 (회복)",
+   "days": [
+    {
+     "label": "W4D1 (Push 1)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 50
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Flat Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 50
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Overhead Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 30
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 27.5
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 5
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W4D2 (Pull 1)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 65
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 60
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 40
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 37.5
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 47.5
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Seated Cable Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W4D3 (Push 2)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 50
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Flat Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 50
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Overhead Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 30
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 27.5
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 5
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W4D4 (Pull 2)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 65
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 60
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 40
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 37.5
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 47.5
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Seated Cable Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "W5",
+   "title": "재축적",
+   "days": [
+    {
+     "label": "W5D1 (Push 1)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 57.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 52.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 47.5
+        }
+       ]
+      },
+      {
+       "name": "Flat Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 57.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 52.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 47.5
+        }
+       ]
+      },
+      {
+       "name": "Overhead Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 35
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 32.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 30
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 12.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 12.5
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 17.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 17.5
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 7.5
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 7.5
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 17.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 17.5
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W5D2 (Pull 1)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 72.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 67.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 60
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 45
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 42.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 37.5
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 47.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 47.5
+        }
+       ]
+      },
+      {
+       "name": "Seated Cable Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 42.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 42.5
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 22.5
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 22.5
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 12.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 12.5
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W5D3 (Push 2)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 57.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 52.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 47.5
+        }
+       ]
+      },
+      {
+       "name": "Flat Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 57.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 52.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 47.5
+        }
+       ]
+      },
+      {
+       "name": "Overhead Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 35
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 32.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 30
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 12.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 12.5
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 17.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 17.5
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 7.5
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 7.5
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 17.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 17.5
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W5D4 (Pull 2)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 72.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 67.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 60
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 45
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 42.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 37.5
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 47.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 47.5
+        }
+       ]
+      },
+      {
+       "name": "Seated Cable Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 42.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 42.5
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 22.5
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 22.5
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 12.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 12.5
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "W6",
+   "title": "강도 진행 1",
+   "days": [
+    {
+     "label": "W6D1 (Push 1)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 60
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 55
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Flat Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 60
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 55
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Overhead Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 37.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 32.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 30
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 20
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 10
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 20
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W6D2 (Pull 1)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 75
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 70
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 62.5
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 47.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 52.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 52.5
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Seated Cable Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 25
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 25
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W6D3 (Push 2)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 60
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 55
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Flat Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 60
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 55
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Overhead Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 37.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 32.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 30
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 20
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 10
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 20
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W6D4 (Pull 2)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 75
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 70
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 62.5
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 47.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 52.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 52.5
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Seated Cable Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 25
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 25
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "W7",
+   "title": "강도 진행 2 (피크)",
+   "days": [
+    {
+     "label": "W7D1 (Push 1)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 62.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 57.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Flat Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 62.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 57.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Overhead Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 37.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 35
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 32.5
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 20
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 10
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 20
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W7D2 (Pull 1)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 77.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 70
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 65
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 50
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 42.5
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 52.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 52.5
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Seated Cable Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 25
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 25
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W7D3 (Push 2)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 62.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 57.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Flat Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 62.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 57.5
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Overhead Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 37.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 35
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 32.5
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 20
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 10
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 20
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W7D4 (Pull 2)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 77.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 70
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 65
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 50
+        },
+        {
+         "reps": "8",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "12",
+         "rpe": "@8",
+         "load": 42.5
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 52.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 52.5
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Seated Cable Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 25
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 25
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "W8",
+   "title": "디로드 (재측정 준비)",
+   "days": [
+    {
+     "label": "W8D1 (Push 1)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 55
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Flat Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 55
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Overhead Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 32.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 30
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 5
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W8D2 (Pull 1)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 67.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 62.5
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 42.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 47.5
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Seated Cable Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W8D3 (Push 2)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 55
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Flat Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 55
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Overhead Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 32.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 30
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 5
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W8D4 (Pull 2)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 67.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 62.5
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@6",
+         "load": 42.5
+        },
+        {
+         "reps": "8",
+         "rpe": "@6",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 47.5
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Seated Cable Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 40
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "W9",
+   "title": "1RM 재측정 / 마무리",
+   "days": [
+    {
+     "label": "W9D1 (Push 1)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 62.5
+        },
+        {
+         "reps": "3",
+         "rpe": "@8.5",
+         "load": 72.5
+        },
+        {
+         "reps": "1",
+         "rpe": "PR",
+         "load": 80
+        }
+       ]
+      },
+      {
+       "name": "Flat Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 62.5
+        },
+        {
+         "reps": "3",
+         "rpe": "@8.5",
+         "load": 72.5
+        },
+        {
+         "reps": "1",
+         "rpe": "PR",
+         "load": 80
+        }
+       ]
+      },
+      {
+       "name": "Overhead Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 40
+        },
+        {
+         "reps": "3",
+         "rpe": "@8.5",
+         "load": 45
+        },
+        {
+         "reps": "1",
+         "rpe": "PR",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 20
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 10
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 20
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W9D2 (Pull 1)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 77.5
+        },
+        {
+         "reps": "3",
+         "rpe": "@8.5",
+         "load": 90
+        },
+        {
+         "reps": "1",
+         "rpe": "PR",
+         "load": 100
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 50
+        },
+        {
+         "reps": "3",
+         "rpe": "@8.5",
+         "load": 57.5
+        },
+        {
+         "reps": "1",
+         "rpe": "PR",
+         "load": 65
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 52.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 52.5
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Seated Cable Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 25
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 25
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W9D3 (Push 2)",
+     "exercises": [
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "BW Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Push-Up",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Squat",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Barbell Back Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 62.5
+        },
+        {
+         "reps": "3",
+         "rpe": "@8.5",
+         "load": 72.5
+        },
+        {
+         "reps": "1",
+         "rpe": "PR",
+         "load": 80
+        }
+       ]
+      },
+      {
+       "name": "Flat Bench Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 62.5
+        },
+        {
+         "reps": "3",
+         "rpe": "@8.5",
+         "load": 72.5
+        },
+        {
+         "reps": "1",
+         "rpe": "PR",
+         "load": 80
+        }
+       ]
+      },
+      {
+       "name": "Overhead Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 40
+        },
+        {
+         "reps": "3",
+         "rpe": "@8.5",
+         "load": 45
+        },
+        {
+         "reps": "1",
+         "rpe": "PR",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Bulgarian Split Squat",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "Incline Dumbbell Press",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 20
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Side Lateral Raise",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 10
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 10
+        }
+       ]
+      },
+      {
+       "name": "Triceps Rope Pushdown",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 20
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "W9D4 (Pull 2)",
+     "exercises": [
+      {
+       "name": "Cat-Camel",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Bird Dog",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10/측",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Glute Bridge",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "BW"
+        }
+       ]
+      },
+      {
+       "name": "Band Pull-Apart",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": null,
+         "load": "밴드"
+        }
+       ]
+      },
+      {
+       "name": "Empty Bar Deadlift",
+       "type": "warmup",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": null,
+         "load": 20
+        }
+       ]
+      },
+      {
+       "name": "Conventional Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 77.5
+        },
+        {
+         "reps": "3",
+         "rpe": "@8.5",
+         "load": 90
+        },
+        {
+         "reps": "1",
+         "rpe": "PR",
+         "load": 100
+        }
+       ]
+      },
+      {
+       "name": "Bent Over Barbell Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "5",
+         "rpe": "@7",
+         "load": 50
+        },
+        {
+         "reps": "3",
+         "rpe": "@8.5",
+         "load": 57.5
+        },
+        {
+         "reps": "1",
+         "rpe": "PR",
+         "load": 65
+        }
+       ]
+      },
+      {
+       "name": "Romanian Deadlift",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 52.5
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 52.5
+        }
+       ]
+      },
+      {
+       "name": "Lat Pull-Down",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 50
+        }
+       ]
+      },
+      {
+       "name": "Seated Cable Row",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        },
+        {
+         "reps": "10",
+         "rpe": "@7~8",
+         "load": 45
+        }
+       ]
+      },
+      {
+       "name": "Face Pull",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 25
+        },
+        {
+         "reps": "15",
+         "rpe": "@7~8",
+         "load": 25
+        }
+       ]
+      },
+      {
+       "name": "Dumbbell Curl",
+       "type": "work",
+       "sets": [
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        },
+        {
+         "reps": "12",
+         "rpe": "@7~8",
+         "load": 15
+        }
+       ]
+      },
+      {
+       "name": "정적 스트레칭",
+       "type": "cooldown",
+       "sets": [
+        {
+         "reps": "5분",
+         "rpe": null,
+         "load": "-"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
