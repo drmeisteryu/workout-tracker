@@ -551,8 +551,7 @@ function renderEx(s,ex){
       const curLoad = cellVal(s.id,dn,si,'load') ?? (lg&&lg.load!=null?lg.load:(sg.load??''));
       const curReps = cellVal(s.id,dn,si,'reps') ?? (lg&&lg.reps!=null?lg.reps:(sg.reps??''));
       const curRpe = cellVal(s.id,dn,si,'rpe') ?? (lg&&lg.rpe!=null?lg.rpe:'');
-      const dc = cellVal(s.id,dn,si,'done');
-      const isDone = dc===undefined ? !!lg : dc; // 미설정이면 저장된 기록 유무로 체크 표시
+      const isDone = !!cellVal(s.id,dn,si,'done'); // 오직 내가 탭한 것만 체크됨 (시작은 빈 칸)
       rows+=`<div class="setrow ${isDone?'done':''}">
         <div class="setno">${si}</div>
         <div class="cell"><input type="number" inputmode="decimal" step="${stepForEquip(dn)}" value="${curLoad}"
@@ -590,7 +589,9 @@ function renderEx(s,ex){
     <div class="sets">${rows}</div>
   </div>`;
 }
-function jstr(s){ return JSON.stringify(s); }
+// HTML 속성(큰따옴표) 안에서 안전한 JS 문자열 리터럴(작은따옴표) 생성.
+// JSON.stringify는 큰따옴표로 감싸 onclick="..." 속성을 깨뜨리므로 직접 이스케이프한다.
+function jstr(s){ return "'"+String(s).replace(/&/g,'&amp;').replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;')+"'"; }
 function numv(v){ if(v===''||v==null) return undefined; const n=Number(v); return isNaN(n)?v:n; }
 function rpeSelect(sid,exName,si,cur){
   let o='<option value="">–</option>';
@@ -603,10 +604,8 @@ function loggedSet(sid,exName,si){
 }
 function toggleDone(sid,exName,si){
   const session=SESSIONS.find(x=>x.id===sid);
-  const dc=cellVal(sid,exName,si,'done');
   const lg=loggedSet(sid,exName,si);
-  const curOn = dc===undefined ? !!lg : dc;
-  const next=!curOn;
+  const next=!cellVal(sid,exName,si,'done');
   if(next){
     // 체크 시 현재 표시값(입력 or 추천 or 기록)을 draft에 고정 → 그 세트만 저장됨
     let set=null;
@@ -630,8 +629,7 @@ function finishSession(){
     ex.sets.forEach((set,i)=>{
       const si=i+1; const c=dk[dn+'#'+si]||{};
       const lg=loggedSet(s.id,dn,si);
-      const checked = c.done===undefined ? !!lg : c.done;
-      if(!checked) return; // ✅ 완료 체크된 세트만 저장
+      if(c.done!==true) return; // ✅ 내가 체크한 세트만 저장
       const sg=suggest(dn,si,typeof set.load==='number'?set.load:null,set.reps,set.rpe,state.currentIdx);
       const load = c.load ?? (lg&&lg.load!=null?lg.load:sg.load);
       const reps = c.reps ?? (lg&&lg.reps!=null?lg.reps:sg.reps);
