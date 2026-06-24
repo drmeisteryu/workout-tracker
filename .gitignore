@@ -4,3 +4,4 @@ _test.xlsx
 # Supabase URL/anon key 원본(빌드 시 index.html에 주입됨). anon key는 공개 안전(RLS로 보호)이지만
 # 원본 설정 파일은 추적하지 않습니다.
 supabase.config.json
+.gstack/
