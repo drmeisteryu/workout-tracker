@@ -47,6 +47,13 @@ header{position:sticky;top:0;z-index:30;background:rgba(15,17,21,.92);backdrop-f
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px;margin:12px 0}
 .card h3{font-size:13px;color:var(--sub);font-weight:600;margin-bottom:10px;letter-spacing:.2px}
 .sectlabel{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:1px;margin:18px 2px 6px}
+.twogrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.twogrid .ex{margin:0}
+.twogrid .exhead{padding:9px 11px}
+.twogrid .exname{font-size:13px}
+.twogrid .exmeta{font-size:10px}
+.twogrid .sets{padding:0 6px 6px}
+.twogrid .setrow{padding:3px}
 
 /* Condition card */
 .bwrow{display:flex;align-items:center;gap:10px;margin-bottom:6px}
@@ -347,10 +354,21 @@ function openSwap(sid,origName){
   let list = alts.map(a=>`<button onclick="doSwap('${sid}',${jstr(origName)},${jstr(a)})" ${norm(a)===norm(cur)?'style=\"border-color:var(--accent);color:var(--accent)\"':''}>${a}${norm(a)===norm(cur)?' ✓':''}</button>`).join('');
   const orig = norm(cur)!==norm(origName) ? `<div class="row"><button class="close" onclick="doSwap('${sid}',${jstr(origName)},null)">↩︎ 원래 운동으로 (${origName})</button></div>` : '';
   showModal(`<h3>운동 바꾸기 · ${g||'대체'}</h3>
-    <div class="muted" style="margin:-6px 0 10px">"${cur}"이(가) 어려우면 같은 부위 운동으로 교체하세요. 세트·반복 구성은 유지됩니다.</div>
+    <div class="muted" style="margin:-6px 0 10px">"${cur}"이(가) 어려우면 교체하세요. 세트·반복 구성은 유지됩니다.</div>
+    <div style="display:flex;gap:8px;margin-bottom:6px">
+      <input id="swapCustom" type="text" placeholder="운동명 직접 입력" value="${norm(cur)!==norm(origName)?cur.replace(/"/g,'&quot;'):''}"
+        style="flex:1;background:var(--card2);border:1px solid var(--line);color:var(--txt);border-radius:11px;padding:12px;font-size:15px">
+      <button class="close" style="flex:0 0 auto;padding:12px 16px" onclick="doSwapCustom('${sid}',${jstr(origName)})">적용</button>
+    </div>
+    <div class="muted" style="text-align:left;margin:8px 2px 6px">또는 같은 부위에서 선택:</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">${list||'<div class="muted">대체 운동 정보 없음</div>'}</div>
     ${orig}
     <div class="row" style="margin-top:14px"><button onclick="closeModal()">닫기</button></div>`);
+}
+function doSwapCustom(sid,origName){
+  const v=(document.getElementById('swapCustom').value||'').trim();
+  if(!v){ toast('운동명을 입력하세요'); return; }
+  doSwap(sid,origName,v);
 }
 function doSwap(sid,origName,newName){
   if(!state.overrides[sid]) state.overrides[sid]={};
@@ -455,7 +473,7 @@ function renderToday(){
       <label>오늘 체중</label>
       <div class="bw-input">
         <input type="number" inputmode="decimal" step="0.1" placeholder="71.8" value="${day.bw??''}"
-          onchange="saveDaily('bw',this.value)"><span class="unit">kg</span>
+          oninput="saveDaily('bw',this.value)"><span class="unit">kg</span>
       </div>
     </div>
     <div class="collapse-h" onclick="toggleCond()">
@@ -480,7 +498,8 @@ function renderToday(){
     const exs=s.exercises.filter(e=>e.type===type);
     if(!exs.length) return;
     html+=`<div class="sectlabel">${title}</div>`;
-    exs.forEach(ex=> html+=renderEx(s,ex));
+    if(type==='work'){ exs.forEach(ex=> html+=renderEx(s,ex)); }
+    else { html+=`<div class="twogrid">`+exs.map(ex=>renderEx(s,ex)).join('')+`</div>`; } // 워밍업·마무리 2컬럼
   });
 
   // finish
@@ -520,21 +539,23 @@ function renderEx(s,ex){
     const plannedLoad = typeof set.load==='number'?set.load:null;
     if(isWork){
       const sg=suggest(dn,si,plannedLoad,set.reps,set.rpe,state.currentIdx);
-      const curLoad = cellVal(s.id,dn,si,'load') ?? (sg.load??'');
-      const curReps = cellVal(s.id,dn,si,'reps') ?? (sg.reps??'');
-      const curRpe = cellVal(s.id,dn,si,'rpe') ?? '';
-      const isDone = cellVal(s.id,dn,si,'done');
+      const lg=loggedSet(s.id,dn,si); // 저장된 기록(있으면 편집 기준)
+      const curLoad = cellVal(s.id,dn,si,'load') ?? (lg&&lg.load!=null?lg.load:(sg.load??''));
+      const curReps = cellVal(s.id,dn,si,'reps') ?? (lg&&lg.reps!=null?lg.reps:(sg.reps??''));
+      const curRpe = cellVal(s.id,dn,si,'rpe') ?? (lg&&lg.rpe!=null?lg.rpe:'');
+      const dc = cellVal(s.id,dn,si,'done');
+      const isDone = dc===undefined ? !!lg : dc; // 미설정이면 저장된 기록 유무로 체크 표시
       rows+=`<div class="setrow ${isDone?'done':''}">
         <div class="setno">${si}</div>
         <div class="cell"><input type="number" inputmode="decimal" step="${stepForEquip(dn)}" value="${curLoad}"
-            onchange="setCell('${s.id}',${jstr(dn)},${si},'load',numv(this.value))">
+            oninput="setCell('${s.id}',${jstr(dn)},${si},'load',numv(this.value))">
           <div class="tgt">계획 ${plannedLoad??'-'}</div></div>
         <div class="cell"><input type="number" inputmode="numeric" value="${curReps}"
-            onchange="setCell('${s.id}',${jstr(dn)},${si},'reps',numv(this.value))">
+            oninput="setCell('${s.id}',${jstr(dn)},${si},'reps',numv(this.value))">
           <div class="tgt">목표 ${set.reps}</div></div>
         <div class="cell">${rpeSelect(s.id,dn,si,curRpe)}
           <div class="tgt">${set.rpe||'-'}</div></div>
-        <button class="donebtn ${isDone?'on':''}" onclick="toggleDone('${s.id}',${jstr(dn)},${si})">✓</button>
+        <button class="donebtn ${isDone?'on':''}" onclick="toggleDone('${s.id}',${jstr(dn)},${si})">${isDone?'✓':''}</button>
       </div>`;
       rows+=`<div class="suggest">💡 ${sg.reason} ${sg.planned!=null?`<span class="pchip">계획 ${sg.planned}kg</span>`:''}</div>`;
     } else {
@@ -568,36 +589,58 @@ function rpeSelect(sid,exName,si,cur){
   for(let r=6;r<=10;r+=0.5){ o+=`<option value="${r}" ${String(cur)===String(r)?'selected':''}>${r}</option>`; }
   return `<select class="rpe-sel" onchange="setCell('${sid}',${jstr(exName)},${si},'rpe',numv(this.value))">${o}</select>`;
 }
+function loggedSet(sid,exName,si){
+  const lg=state.logs[sid]; if(!lg||!lg.sets) return null;
+  return lg.sets.find(x=>x.exercise===exName && x.setIndex===si) || null;
+}
 function toggleDone(sid,exName,si){
-  const cur=cellVal(sid,exName,si,'done');
-  setCell(sid,exName,si,'done',!cur);
-  // auto fill reps/load with suggestion if empty when marking done
+  const session=SESSIONS.find(x=>x.id===sid);
+  const dc=cellVal(sid,exName,si,'done');
+  const lg=loggedSet(sid,exName,si);
+  const curOn = dc===undefined ? !!lg : dc;
+  const next=!curOn;
+  if(next){
+    // 체크 시 현재 표시값(입력 or 추천 or 기록)을 draft에 고정 → 그 세트만 저장됨
+    let set=null;
+    if(session){ for(const ex of session.exercises){ const dn=displayName(sid,ex.name);
+      if(dn===exName){ set=ex.sets[si-1]; break; } } }
+    const planned = set&&typeof set.load==='number'?set.load:null;
+    const sg = set?suggest(exName,si,planned,set.reps,set.rpe,state.currentIdx):{load:null,reps:null};
+    if(cellVal(sid,exName,si,'load')==null) setCell(sid,exName,si,'load', lg&&lg.load!=null?lg.load:sg.load);
+    if(cellVal(sid,exName,si,'reps')==null) setCell(sid,exName,si,'reps', lg&&lg.reps!=null?lg.reps:sg.reps);
+  }
+  setCell(sid,exName,si,'done',next);
   renderToday();
 }
 function finishSession(){
   const s=SESSIONS[state.currentIdx];
   const dk=state.draft[s.id]||{};
+  const wasCompleted = state.logs[s.id] && state.logs[s.id].completed;
   const sets=[];
   s.exercises.filter(e=>e.type==='work').forEach(ex=>{
     const dn=displayName(s.id,ex.name);
     ex.sets.forEach((set,i)=>{
       const si=i+1; const c=dk[dn+'#'+si]||{};
+      const lg=loggedSet(s.id,dn,si);
+      const checked = c.done===undefined ? !!lg : c.done;
+      if(!checked) return; // ✅ 완료 체크된 세트만 저장
       const sg=suggest(dn,si,typeof set.load==='number'?set.load:null,set.reps,set.rpe,state.currentIdx);
-      const load = c.load ?? sg.load;
-      const reps = c.reps ?? sg.reps;
-      if(load!=null || reps!=null)
-        sets.push({exercise:dn,orig:(norm(dn)!==norm(ex.name)?ex.name:undefined),setIndex:si,
-          load:(typeof load==='number'?load:null),
-          reps:parseIntReps(reps), rpe:(c.rpe!=null?Number(c.rpe):null)});
+      const load = c.load ?? (lg&&lg.load!=null?lg.load:sg.load);
+      const reps = c.reps ?? (lg&&lg.reps!=null?lg.reps:sg.reps);
+      const rpe  = c.rpe!=null?Number(c.rpe):(lg&&lg.rpe!=null?lg.rpe:null);
+      sets.push({exercise:dn,orig:(norm(dn)!==norm(ex.name)?ex.name:undefined),setIndex:si,
+        load:(typeof load==='number'?load:null), reps:parseIntReps(reps), rpe});
     });
   });
-  state.logs[s.id]={ sessionId:s.id, date:todayISO(), sets, completed:true };
-  // advance to next session if this was current resume point
+  if(!sets.length){ toast('완료 체크된 세트가 없습니다'); return; }
+  const prevDate = wasCompleted ? state.logs[s.id].date : todayISO();
+  state.logs[s.id]={ sessionId:s.id, date:prevDate, sets, completed:true };
   saveState(state);
-  toast('세션 기록 완료 ✓');
-  // move to next uncompleted
-  let nxt=state.currentIdx+1;
-  if(nxt<SESSIONS.length){ state.currentIdx=nxt; saveState(state); }
+  toast(wasCompleted ? '수정 저장됨 ✓' : `세션 기록 완료 ✓ (${sets.length}세트)`);
+  if(!wasCompleted){ // 처음 완료할 때만 다음 세션으로 이동
+    let nxt=state.currentIdx+1;
+    if(nxt<SESSIONS.length) state.currentIdx=nxt;
+  }
   renderAll(); window.scrollTo(0,0);
 }
 
