@@ -223,17 +223,14 @@ svg.chart{width:100%;height:130px;display:block}
   <div class="authbox">
     <div class="authlogo"><img src="icon-192.png" alt="리프트로그" style="width:84px;height:84px;border-radius:20px"></div>
     <h2>리프트로그</h2>
-    <p class="authsub" id="authSub">이메일로 로그인하세요</p>
+    <p class="authsub" id="authSub">이메일만 입력하면 됩니다 · 비밀번호 없음</p>
     <input id="authEmail" type="email" inputmode="email" autocomplete="username" placeholder="이메일">
-    <input id="authPw" type="password" autocomplete="current-password" placeholder="비밀번호 (6자 이상)">
     <div id="authErr" class="autherr"></div>
-    <button id="authBtn" class="authbtn" onclick="doAuth()">로그인</button>
-    <div class="authtoggle">
-      <span id="authToggleTxt">계정이 없으신가요?</span>
-      <a onclick="toggleAuthMode()" id="authToggleLink">가입하기</a>
-    </div>
+    <button id="authBtn" class="authbtn" onclick="doAuth()">로그인 링크 받기</button>
+    <div class="authtoggle" style="line-height:1.6">메일로 온 링크를 한 번 누르면 로그인됩니다.<br>이후에는 계속 로그인 상태로 유지됩니다.</div>
   </div>
 </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
@@ -942,38 +939,27 @@ function switchTab(t){ curTab=t;
 function renderAll(){ renderSess(); renderToday(); if(curTab==='history')renderHistory(); if(curTab==='stats')renderStats(); }
 
 /* ===== Auth ===== */
-let authMode='login'; // or 'signup'
 function showAuth(show){ document.getElementById('authOverlay').classList.toggle('hidden',!show); }
-function toggleAuthMode(){ authMode = authMode==='login'?'signup':'login';
-  document.getElementById('authSub').textContent = authMode==='login'?'이메일로 로그인하세요':'새 계정을 만드세요';
-  document.getElementById('authBtn').textContent = authMode==='login'?'로그인':'가입하기';
-  document.getElementById('authToggleTxt').textContent = authMode==='login'?'계정이 없으신가요?':'이미 계정이 있으신가요?';
-  document.getElementById('authToggleLink').textContent = authMode==='login'?'가입하기':'로그인';
-  document.getElementById('authErr').textContent='';
-}
+// 비밀번호 없음: 이메일로 로그인 링크(매직링크)를 보낸다.
+// 계정이 없으면 자동 생성되고, 한 번 로그인하면 세션이 계속 유지된다.
 async function doAuth(){
   const email=document.getElementById('authEmail').value.trim();
-  const pw=document.getElementById('authPw').value;
   const err=document.getElementById('authErr'); const btn=document.getElementById('authBtn');
   err.textContent='';
-  if(!email||!pw){ err.textContent='이메일과 비밀번호를 입력하세요.'; return; }
-  if(pw.length<6){ err.textContent='비밀번호는 6자 이상이어야 합니다.'; return; }
-  btn.disabled=true; btn.textContent='처리 중…';
+  if(!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+    err.style.color='var(--bad)'; err.textContent='이메일 주소를 정확히 입력하세요.'; return; }
+  btn.disabled=true; btn.textContent='메일 보내는 중…';
   try{
-    let res;
-    if(authMode==='signup') res=await sb.auth.signUp({email,password:pw});
-    else res=await sb.auth.signInWithPassword({email,password:pw});
-    if(res.error) throw res.error;
-    if(authMode==='signup' && !res.data.session){
-      err.style.color='var(--ok)'; err.textContent='가입 완료! 이메일 인증이 필요하면 메일함을 확인 후 로그인하세요.';
-      authMode='login'; btn.disabled=false; btn.textContent='로그인'; return;
-    }
-    authUser=res.data.user || (res.data.session&&res.data.session.user);
-    await afterLogin();
+    const {error}=await sb.auth.signInWithOtp({email,
+      options:{ shouldCreateUser:true, emailRedirectTo: location.origin+location.pathname }});
+    if(error) throw error;
+    err.style.color='var(--ok)';
+    err.innerHTML='✉️ <b>'+email+'</b> 으로 로그인 링크를 보냈습니다.<br>메일함(스팸함 포함)에서 링크를 눌러주세요.';
+    btn.textContent='메일 다시 보내기'; btn.disabled=false;
   }catch(e){
     err.style.color='var(--bad)';
-    err.textContent = mapAuthErr(e.message||'로그인 실패');
-    btn.disabled=false; btn.textContent= authMode==='login'?'로그인':'가입하기';
+    err.textContent = mapAuthErr(e.message||'메일 발송 실패');
+    btn.disabled=false; btn.textContent='로그인 링크 받기';
   }
 }
 function mapAuthErr(m){
@@ -1052,11 +1038,20 @@ function parseProgram(wb){
 async function boot(){
   if(CLOUD){
     setSync('saved');
+    // 메일의 로그인 링크로 돌아오면 세션이 잡히는 즉시 앱으로 진입
+    let entered=false;
+    sb.auth.onAuthStateChange(async (event,session)=>{
+      if(session && !entered && (event==='SIGNED_IN'||event==='INITIAL_SESSION')){
+        entered=true; authUser=session.user;
+        history.replaceState(null,'',location.pathname); // URL의 토큰 제거
+        await afterLogin();
+      }
+    });
     try{
       const {data:{session}} = await sb.auth.getSession();
-      if(session){ authUser=session.user; await afterLogin(); return; }
+      if(session && !entered){ entered=true; authUser=session.user; await afterLogin(); return; }
     }catch(e){}
-    showAuth(true);
+    if(!entered) showAuth(true);
   } else {
     // 로컬 모드(설정 전): 로그인 없이 동작
     setSync('local');
