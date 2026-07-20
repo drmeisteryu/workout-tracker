@@ -192,7 +192,7 @@ svg.chart{width:100%;height:130px;display:block}
     <div class="hrow">
       <div>
         <div class="htitle">🏋️ 리프트로그</div>
-        <div class="hsub" id="hsub">근비대 · Push/Pull 9주 프로그램</div>
+        <div class="hsub" id="hsub">근비대 · 3분할 12주 · 주 4회</div>
       </div>
       <div style="display:flex;align-items:center;gap:6px">
         <span id="syncDot" title="로컬" style="font-size:10px;color:var(--mut)">●</span>
@@ -243,6 +243,15 @@ const PROGRAM = __PROGRAM__;
 const HISTORY_SEED = __HISTORY__;
 const MUSCLE_GROUPS = __MUSCLE__; // {부위: [운동명,...]}
 const STARTED = "2026-05-20"; // 프로그램 시작일
+// 프로그램이 교체되면 세션 번호 체계가 달라지므로 진행 위치를 1회 초기화한다.
+// 기록(logs)·체중(daily)은 그대로 보존된다.
+const PROGRAM_VERSION = "2026-06-3split-v1";
+function migrateProgram(){
+  if(state.programVersion===PROGRAM_VERSION) return false;
+  state.programVersion=PROGRAM_VERSION;
+  state.currentIdx=0; state.draft={}; state.overrides={};
+  return true;
+}
 
 /* 프로그램 운동 → 부위 매핑 (대체운동 추천용) */
 const EX_GROUP = {
@@ -251,7 +260,12 @@ const EX_GROUP = {
   'Flat Bench Press':'가슴','Incline Dumbbell Press':'가슴',
   'Bent Over Barbell Row':'등','Lat Pull-Down':'등','Seated Cable Row':'등','Face Pull':'어깨',
   'Overhead Press':'어깨','Dumbbell Side Lateral Raise':'어깨',
-  'Triceps Rope Pushdown':'팔','Dumbbell Curl':'팔'
+  'Triceps Rope Pushdown':'팔','Dumbbell Curl':'팔',
+  // 3분할 프로그램(2026-06) 추가 종목
+  'Goblet Squat':'하체전면','Back Extension':'하체후면','Machine Abs':'코어',
+  'Flat Machine Press':'가슴','Chest Fly':'가슴','Machine Shoulder Press':'어깨',
+  'Rear Delt Fly':'어깨','Cable Push Down':'팔','Machine Curl':'팔',
+  'Chest Supported Row':'등','Lying Leg Curl':'하체후면'
 };
 function groupOf(name){
   if(EX_GROUP[name]) return EX_GROUP[name];
@@ -265,7 +279,7 @@ function altsFor(name){ const g=groupOf(name); if(!g) return [];
 /* 장비별 중량 조정 단위: 바벨 5kg · 덤벨 1kg · 그 외(케이블/머신) 2.5kg */
 function equipOf(name){
   const n=norm(name);
-  if(n.includes('dumbbell')||n.includes('bulgariansplit')) return 'dumbbell';
+  if(n.includes('dumbbell')||n.includes('bulgariansplit')||n.includes('goblet')) return 'dumbbell';
   if(n.includes('barbell')||n.includes('deadlift')||n.includes('benchpress')||n.includes('backsquat')||n.includes('overheadpress')||n.includes('ohp')||n.includes('emptybar')||n.includes('barbellsquat')) return 'barbell';
   return 'cable';
 }
@@ -652,7 +666,12 @@ function finishSession(){
 
 /* ===== Render: history ===== */
 function renderHistory(){
-  const logged=SESSIONS.map((s,i)=>({s,i,log:state.logs[s.id]})).filter(x=>x.log).reverse();
+  const cur=SESSIONS.map((s,i)=>({s,i,log:state.logs[s.id]})).filter(x=>x.log);
+  // 이전 프로그램의 기록(현재 세션 목록에 없는 id)도 보존해서 보여준다
+  const ids=new Set(SESSIONS.map(s=>s.id));
+  const old=Object.keys(state.logs).filter(id=>!ids.has(id)).map(id=>({
+    s:{id, weekTitle:'이전 프로그램', type:'pull'}, i:-1, log:state.logs[id]}));
+  const logged=cur.reverse().concat(old.sort((a,b)=>(b.log.date||'')<(a.log.date||'')?-1:1));
   let html='';
   // bodyweight quick
   const bws=Object.entries(state.daily).filter(([d,v])=>v.bw!=null).sort((a,b)=>a[0]<b[0]?1:-1);
@@ -967,6 +986,7 @@ async function afterLogin(){
   showAuth(false);
   await pullCloud();
   if(state.program) rebuildSessions(state.program);
+  if(migrateProgram()) saveState(state);
   if(state.currentIdx>=SESSIONS.length) state.currentIdx=Math.max(0,SESSIONS.length-1);
   document.getElementById('hsub').textContent = authUser.email;
   renderAll();
@@ -1040,7 +1060,9 @@ async function boot(){
   } else {
     // 로컬 모드(설정 전): 로그인 없이 동작
     setSync('local');
-    rebuildSessions(); renderAll();
+    rebuildSessions(); if(migrateProgram()) saveState(state);
+    if(state.currentIdx>=SESSIONS.length) state.currentIdx=Math.max(0,SESSIONS.length-1);
+    renderAll();
   }
 }
 boot();
