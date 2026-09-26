@@ -720,7 +720,7 @@ function finishSession(){
 /* ===== 영양 · 보충제 체크 =====
    state.nutriCfg: 운동·식사 시각과 보충제 양 (설정에서 변경)
    state.daily[날짜].nut: {항목id:true} · dayType: 'train'|'rest' · cardio: 분 */
-const NUTRI_DEFAULT={workout:'19:00',breakfast:'07:30',lunch:'12:30',dinner:'18:30',scoop:25,creatine:5};
+const NUTRI_DEFAULT={workout:'06:30',breakfast:'07:30',lunch:'12:30',dinner:'18:30',scoop:25,creatine:5};
 const TRAIN_DOW=[1,2,4,5]; // 권장 운동 요일: 월·화·목·금
 function ncfg(){ return Object.assign({},NUTRI_DEFAULT,state.nutriCfg||{}); }
 function toMin(hm){ const[h,m]=String(hm||'0:0').split(':').map(Number); return (h||0)*60+(m||0); }
