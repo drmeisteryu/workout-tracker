@@ -132,6 +132,12 @@ header{position:sticky;top:0;z-index:30;background:rgba(15,17,21,.92);backdrop-f
 .donebtn.on{background:var(--ok);color:#04231a;border-color:var(--ok)}
 .donebtn.on::before{display:none}
 .donebtn.on::after{content:'✓';font-size:22px}
+.setctl{display:flex;align-items:center;justify-content:center;gap:10px;padding:8px 4px 2px;border-top:1px solid var(--line)}
+.setctl button{background:var(--card2);color:var(--txt);border:1px solid var(--line);border-radius:10px;padding:9px 14px;font-size:13px;font-weight:700}
+.setctl button:disabled{opacity:.35}
+.setctl .cnt{font-size:12px;color:var(--sub);min-width:84px;text-align:center}
+.setctl .cnt b{color:var(--txt)}
+.setctl .cnt.chg b{color:var(--accent)}
 .suggest{font-size:11px;color:var(--accent);padding:3px 4px 7px;display:flex;gap:5px;align-items:flex-start}
 .suggest .pchip{color:var(--mut);background:var(--card2);border-radius:5px;padding:1px 5px;font-size:10px}
 .warm .sets .cell input{font-size:14px}
@@ -600,16 +606,36 @@ function metricSel(key,label,val,opts,unit){
 function saveDaily(field,val){ const t=todayISO(); if(!state.daily[t]) state.daily[t]={};
   state.daily[t][field]= val===''?undefined:(isNaN(Number(val))?val:Number(val)); saveState(state); }
 
+/* ===== 세트 수 조정 (세션별·종목별) =====
+   state.setCount[세션id][원래 운동명] = 세트 수. 늘리면 마지막 세트 구성을 복사한다. */
+const SET_MIN=1, SET_MAX=10;
+function setsOf(sid,ex){
+  const n=((state.setCount||{})[sid]||{})[ex.name];
+  if(n==null||ex.type!=='work') return ex.sets;
+  if(n<=ex.sets.length) return ex.sets.slice(0,n);
+  const last=ex.sets[ex.sets.length-1];
+  return ex.sets.concat(Array.from({length:n-ex.sets.length},()=>Object.assign({},last,{extra:true})));
+}
+function changeSets(sid,origName,delta){
+  const s=SESSIONS.find(x=>x.id===sid); const ex=s&&s.exercises.find(e=>e.name===origName); if(!ex) return;
+  const n=Math.min(SET_MAX,Math.max(SET_MIN,setsOf(sid,ex).length+delta));
+  if(!state.setCount) state.setCount={};
+  if(!state.setCount[sid]) state.setCount[sid]={};
+  if(n===ex.sets.length) delete state.setCount[sid][origName]; else state.setCount[sid][origName]=n;
+  saveState(state); renderToday();
+  toast(delta>0?`세트 추가 · ${n}세트`:`세트 빼기 · ${n}세트`);
+}
 function renderEx(s,ex){
   const isWork=ex.type==='work';
   const cls=ex.type;
   const dn = isWork ? displayName(s.id, ex.name) : ex.name; // 교체된 운동명
   const swapped = isWork && norm(dn)!==norm(ex.name);
   let rows='';
+  const sets=setsOf(s.id,ex);
   if(isWork){
     rows+=`<div class="sethdr"><div class="c">#</div><div class="c">중량 kg</div><div class="c">반복</div><div class="c">RPE</div><div class="c">✓</div></div>`;
   }
-  ex.sets.forEach((set,i)=>{
+  sets.forEach((set,i)=>{
     const si=i+1;
     const plannedLoad = typeof set.load==='number'?set.load:null;
     if(isWork){
@@ -620,7 +646,7 @@ function renderEx(s,ex){
       const curRpe = cellVal(s.id,dn,si,'rpe') ?? (lg&&lg.rpe!=null?lg.rpe:'');
       const isDone = !!cellVal(s.id,dn,si,'done'); // 오직 내가 탭한 것만 체크됨 (시작은 빈 칸)
       rows+=`<div class="setrow ${isDone?'done':''}">
-        <div class="setno">${si}</div>
+        <div class="setno">${si}${set.extra?'<div style="font-size:8.5px;color:var(--accent)">추가</div>':''}</div>
         <div class="cell"><input type="number" inputmode="decimal" step="${stepForEquip(dn)}" value="${curLoad}"
             oninput="setCell('${s.id}',${jstr(dn)},${si},'load',numv(this.value))">
           <div class="tgt">계획 ${plannedLoad??'-'}</div></div>
@@ -639,6 +665,14 @@ function renderEx(s,ex){
       </div>`;
     }
   });
+  if(isWork){
+    const base=ex.sets.length, n=sets.length;
+    rows+=`<div class="setctl">
+      <button onclick="changeSets('${s.id}',${jstr(ex.name)},-1)" ${n<=SET_MIN?'disabled':''}>− 세트</button>
+      <div class="cnt ${n!==base?'chg':''}"><b>${n}세트</b>${n!==base?`<br>계획 ${base}세트`:''}</div>
+      <button onclick="changeSets('${s.id}',${jstr(ex.name)},1)" ${n>=SET_MAX?'disabled':''}>+ 세트</button>
+    </div>`;
+  }
   // 같은 부위 대체운동 추천 라인
   let recLine='';
   if(isWork){
@@ -649,7 +683,7 @@ function renderEx(s,ex){
   return `<div class="ex ${cls} ${isWork?'':'warm'}">
     <div class="exhead">
       <div><div class="exname">${dn}${swapped?` <span class="swaptag">교체됨</span>`:''}</div>
-        <div class="exmeta">${ex.sets.length}세트 ${isWork?'· '+ex.sets.map(x=>x.reps).join('/')+'회':''}${ex.note?' · '+ex.note:''}${swapped?` · 원래: ${ex.name}`:''}</div></div>
+        <div class="exmeta">${sets.length}세트 ${isWork?'· '+sets.map(x=>x.reps).join('/')+'회':''}${ex.note?' · '+ex.note:''}${swapped?` · 원래: ${ex.name}`:''}</div></div>
       ${swapBtn}
     </div>
     ${recLine}
@@ -677,7 +711,7 @@ function toggleDone(sid,exName,si){
     // 체크 시 현재 표시값(입력 or 추천 or 기록)을 draft에 고정 → 그 세트만 저장됨
     let set=null;
     if(session){ for(const ex of session.exercises){ const dn=displayName(sid,ex.name);
-      if(dn===exName){ set=ex.sets[si-1]; break; } } }
+      if(dn===exName){ set=setsOf(sid,ex)[si-1]; break; } } }
     const planned = set&&typeof set.load==='number'?set.load:null;
     const sg = set?suggest(exName,si,planned,set.reps,set.rpe,state.currentIdx):{load:null,reps:null};
     if(cellVal(sid,exName,si,'load')==null) setCell(sid,exName,si,'load', lg&&lg.load!=null?lg.load:sg.load);
@@ -693,7 +727,7 @@ function finishSession(){
   const sets=[];
   s.exercises.filter(e=>e.type==='work').forEach(ex=>{
     const dn=displayName(s.id,ex.name);
-    ex.sets.forEach((set,i)=>{
+    setsOf(s.id,ex).forEach((set,i)=>{
       const si=i+1; const c=dk[dn+'#'+si]||{};
       const lg=loggedSet(s.id,dn,si);
       if(c.done!==true) return; // ✅ 내가 체크한 세트만 저장
