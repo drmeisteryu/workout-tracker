@@ -215,7 +215,6 @@ svg.chart{width:100%;height:130px;display:block}
 .addbtn:active{background:var(--line)}
 .startbig{width:100%;background:var(--ok);color:#04231a;font-weight:900;font-size:19px;border-radius:16px;padding:20px;margin:14px 0 4px}
 .gtag{font-size:10px;font-weight:700;color:var(--sub);background:var(--card2);border:1px solid var(--line);border-radius:5px;padding:1px 6px;vertical-align:middle;margin-left:4px}
-.exen{font-size:11px;color:var(--mut)}
 .xbtn{flex:0 0 auto;width:34px;height:34px;border-radius:10px;background:var(--card2);color:var(--mut);font-size:15px;border:1px solid var(--line)}
 .setrow.cardio,.sethdr.cardio{grid-template-columns:22px 1fr 46px}
 .addset{flex:1;background:var(--accent)!important;color:#160d2e!important;border:none!important}
@@ -343,8 +342,8 @@ const EX_GROUP = {
   'Standing Calf Raise':'하체후면','Cable Crunch':'코어','Dumbbell Shoulder Press':'어깨',
   'Overhead Triceps Extension':'팔'
 };
-/* ===== 자유 운동용 운동 목록 (부위 · 영문 기록명 · 한글 표시명) =====
-   기록은 영문명으로 저장해 기존 기록·1RM 통계와 이어지고, 화면·검색은 한글로 한다. */
+/* ===== 자유 운동용 운동 목록 (부위 · 영문 운동명 · 한글 검색어) =====
+   화면·기록은 영문명. 한글명은 검색용(예: '레그프' → Leg Press)으로만 쓴다. */
 const FREE_CATALOG=[
   ['가슴',[['Flat Bench Press','바벨 벤치프레스'],['Incline Bench Press','인클라인 벤치프레스'],['Flat Dumbbell Press','덤벨 벤치프레스'],
     ['Incline Dumbbell Press','인클라인 덤벨프레스'],['Flat Machine Press','체스트 프레스 머신'],['Incline Machine Press','인클라인 체스트 프레스 머신'],
@@ -380,7 +379,7 @@ const ALIAS={'Barbell Squat':'Barbell Back Squat','Flat Barbell Bench Press':'Fl
   'Assisted-Pull Up':'Assisted Pull-Up','Incline Barbell Press':'Incline Bench Press'};
 function canon(name){ return ALIAS[name]||name; }
 function koOf(name){ return KO[canon(name)]||''; }
-function exLabel(name){ return koOf(name)||name; }
+function exLabel(name){ return name; } // 운동 이름은 영문으로 표시
 function isCardio(name){ return groupOf(name)==='유산소'; }
 function customEx(){ try{ return (state&&state.customEx)||{}; }catch(e){ return {}; } } // 내가 직접 추가한 운동 {이름: 부위}
 
@@ -1124,7 +1123,7 @@ function frRpe(i,j,cur){
   return `<select class="rpe-sel" onchange="frCell(${i},${j},'rpe',numv(this.value))">${o}</select>`;
 }
 function renderFreeEx(e,i,lp){
-  const cardio=isCardio(e.name), ko=koOf(e.name);
+  const cardio=isCardio(e.name);
   const done=e.sets.filter(s=>s.done).length;
   let rows = cardio
     ? `<div class="sethdr cardio"><div class="c">#</div><div class="c">시간 (분)</div><div class="c">✓</div></div>`
@@ -1144,7 +1143,7 @@ function renderFreeEx(e,i,lp){
   const lpText = lp?`지난번${lp.date?' '+fmtDate(lp.date):''}: ${lp.sets.map(setText).join(' · ')}`:'첫 기록';
   return `<div class="ex ${cardio?'cardio':'work'}" id="fx${i}">
     <div class="exhead"><div style="min-width:0"><div class="exname">${esc(exLabel(e.name))}<span class="gtag">${groupLabel(groupOf(e.name))}</span></div>
-      <div class="exmeta">${ko?`<span class="exen">${esc(e.name)}</span> · `:''}${lpText}</div></div>
+      <div class="exmeta">${lpText}</div></div>
       <button class="xbtn" aria-label="운동 빼기" onclick="removeFreeEx(${i})">✕</button></div>
     <div class="sets">${rows}</div></div>`;
 }
@@ -1153,7 +1152,7 @@ function renderFreeEx(e,i,lp){
 let pkGroup='최근';
 function openPicker(){
   showModal(`<h3>운동 추가</h3>
-    <input id="pkQ" class="pkq" type="search" autocomplete="off" placeholder="검색 또는 새 운동 이름 (예: 레그프레스)" oninput="renderPicker()">
+    <input id="pkQ" class="pkq" type="search" autocomplete="off" placeholder="검색 또는 새 운동 이름 (예: leg press, 레그)" oninput="renderPicker()">
     <div id="pkBody"></div>
     <div class="row" style="margin-top:12px"><button onclick="closeModal()">닫기</button></div>`);
   const sh=document.querySelector('#modalRoot .sheet'); if(sh) sh.classList.add('tall');
@@ -1192,9 +1191,9 @@ function renderPicker(){
     names=[...all.entries()].filter(([,g])=>g===pkGroup).map(([n])=>n);
     if(!names.length) html+=`<div class="muted" style="margin-bottom:8px">직접 추가한 운동이 여기에 모여요. 위 검색칸에 이름을 적어 추가하세요.</div>`;
   }
-  html+=`<div class="pkgrid">${names.slice(0,40).map(n=>{ const ko=koOf(n), lp=lpi[canon(n)], on=inSess.has(canon(n));
+  html+=`<div class="pkgrid">${names.slice(0,40).map(n=>{ const lp=lpi[canon(n)], on=inSess.has(canon(n));
     return `<button class="pkitem ${on?'in':''}" onclick="addFreeEx(${jstr(n)})">
-      <span class="k">${esc(ko||n)}${on?' ✓':''}</span>${ko?`<span class="e">${esc(n)}</span>`:''}
+      <span class="k">${esc(n)}${on?' ✓':''}</span>
       ${lp?`<span class="lp">${lp.date?fmtDate(lp.date)+' · ':''}${setText(lp.sets[0])}${lp.sets.length>1?` 외 ${lp.sets.length-1}세트`:''}</span>`:''}</button>`; }).join('')}</div>`;
   body.innerHTML=html;
 }
@@ -1645,12 +1644,12 @@ function exportExcel(){
   const sessById={}; SESSIONS.forEach(s=>sessById[s.id]=s);
   const logs=sortedLogs().reverse(); // 오래된 순
   const kindOf=(id,l)=> l.free?'자유 운동':(sessById[id]?sessById[id].weekTitle:'이전 프로그램');
-  const rec=[['날짜','시작','종료','구분','세션','부위','운동','운동(기록명)','세트','중량(kg)','반복','RPE','유산소(분)','추정1RM(kg)']];
+  const rec=[['날짜','시작','종료','구분','세션','부위','운동','세트','중량(kg)','반복','RPE','유산소(분)','추정1RM(kg)']];
   logs.forEach(({id,l})=>{
     l.sets.forEach(st=>{
       const e=(st.load&&st.reps)?Math.round(epley1RM(st.load,st.reps)*10)/10:'';
       rec.push([l.date||'',l.startAt?hmOf(l.startAt):'',l.endAt?hmOf(l.endAt):'',kindOf(id,l),id,groupLabel(groupOf(st.exercise)),
-        exLabel(st.exercise),st.exercise,st.setIndex,st.load??'',st.reps??'',st.rpe!=null?'@'+st.rpe:'',st.min??'',e]);
+        st.exercise,st.setIndex,st.load??'',st.reps??'',st.rpe!=null?'@'+st.rpe:'',st.min??'',e]);
     });
   });
   const daily=[['날짜','요일','체중(kg)','수면(h)','영양','동기','자신감','스트레스','피로도','운동일/휴식일','크레아틴','단백질 보충제(스쿱)','식단 체크','유산소(분)']];
