@@ -200,6 +200,46 @@ svg.chart{width:100%;height:130px;display:block}
 .muted{color:var(--mut);font-size:12px;text-align:center;margin-top:8px}
 .empty{text-align:center;color:var(--mut);padding:40px 20px;font-size:14px}
 
+/* ===== 자유 운동 모드 ===== */
+.frbar{display:flex;align-items:center;gap:8px;margin-top:8px}
+.frpill{flex:1;min-width:0;border-radius:12px;padding:7px 12px;border:1px solid var(--line);background:var(--card)}
+.frpill.live{border-color:var(--ok);background:linear-gradient(180deg,rgba(52,211,153,.16),var(--card))}
+.frpill.edit{border-color:var(--warn);background:linear-gradient(180deg,rgba(251,191,36,.14),var(--card))}
+.frpill .l1{font-weight:800;font-size:16px;font-variant-numeric:tabular-nums}
+.frpill .l2{font-size:11.5px;color:var(--sub);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.frpill .rest{color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
+.frbtn{flex:0 0 auto;height:48px;padding:0 16px;border-radius:12px;font-size:15px;font-weight:800;background:var(--ok);color:#04231a}
+.frbtn.stop{background:var(--bad);color:#2a0606}
+.frbtn.save{background:var(--warn);color:#2a1d02}
+.addbtn{width:100%;background:var(--card2);color:var(--txt);border:1.5px dashed var(--accent);border-radius:14px;padding:16px;font-size:16px;font-weight:800;margin:12px 0}
+.addbtn:active{background:var(--line)}
+.startbig{width:100%;background:var(--ok);color:#04231a;font-weight:900;font-size:19px;border-radius:16px;padding:20px;margin:14px 0 4px}
+.gtag{font-size:10px;font-weight:700;color:var(--sub);background:var(--card2);border:1px solid var(--line);border-radius:5px;padding:1px 6px;vertical-align:middle;margin-left:4px}
+.xbtn{flex:0 0 auto;width:34px;height:34px;border-radius:10px;background:var(--card2);color:var(--mut);font-size:15px;border:1px solid var(--line)}
+.setrow.cardio,.sethdr.cardio{grid-template-columns:22px 1fr 46px}
+.addset{flex:1;background:var(--accent)!important;color:#160d2e!important;border:none!important}
+.timecard{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--sub)}
+.timecard span{white-space:nowrap}
+.timecard input{background:var(--card2);border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:7px 8px;font-size:15px;font-weight:700}
+.donelist .hcard{cursor:pointer}
+/* 운동 선택 시트 */
+.sheet.tall{max-height:88vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.pkq{width:100%;background:var(--card2);border:1px solid var(--accent);color:var(--txt);border-radius:11px;padding:13px;font-size:16px;margin-bottom:10px}
+.pkq:focus{outline:none}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:6px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.sheet .chip{flex:0 0 auto;white-space:nowrap;background:var(--card2);color:var(--sub);border:1px solid var(--line);border-radius:20px;padding:8px 14px;font-size:13.5px;font-weight:700}
+.sheet .chip.on{background:var(--accent);color:#160d2e;border-color:var(--accent)}
+.pkgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pkitem{text-align:left;padding:11px 12px!important;display:flex;flex-direction:column;gap:2px;min-width:0}
+.pkitem .k{font-size:14.5px;font-weight:800;color:var(--txt)}
+.pkitem .e{font-size:10.5px;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pkitem .lp{font-size:10.5px;color:var(--accent)}
+.pkitem.in{border-color:var(--ok)!important;opacity:.7}
+.pknew{width:100%;background:var(--accent)!important;color:#160d2e!important;font-weight:800!important;margin-bottom:10px}
+.sheet label.f{display:block;font-size:12px;color:var(--sub);margin:8px 0 4px}
+.sheet input.f{width:100%;background:var(--card2);border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:11px;font-size:16px}
+
 /* auth */
 #authOverlay{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:24px}
 .authbox{width:100%;max-width:360px;text-align:center}
@@ -302,8 +342,52 @@ const EX_GROUP = {
   'Standing Calf Raise':'하체후면','Cable Crunch':'코어','Dumbbell Shoulder Press':'어깨',
   'Overhead Triceps Extension':'팔'
 };
+/* ===== 자유 운동용 운동 목록 (부위 · 영문 운동명 · 한글 검색어) =====
+   화면·기록은 영문명. 한글명은 검색용(예: '레그프' → Leg Press)으로만 쓴다. */
+const FREE_CATALOG=[
+  ['가슴',[['Flat Bench Press','바벨 벤치프레스'],['Incline Bench Press','인클라인 벤치프레스'],['Flat Dumbbell Press','덤벨 벤치프레스'],
+    ['Incline Dumbbell Press','인클라인 덤벨프레스'],['Flat Machine Press','체스트 프레스 머신'],['Incline Machine Press','인클라인 체스트 프레스 머신'],
+    ['Smith Machine Bench Press','스미스 벤치프레스'],['Chest Fly','체스트 플라이 (펙덱)'],['Dumbbell Fly','덤벨 플라이'],
+    ['Cable Crossover','케이블 크로스오버'],['Dips','딥스'],['Decline Press','디클라인 프레스'],['Push-Up','푸시업']]],
+  ['등',[['Lat Pull-Down','랫 풀다운'],['Pull-Up','풀업 (턱걸이)'],['Assisted Pull-Up','어시스트 풀업 머신'],['Seated Cable Row','시티드 케이블 로우'],
+    ['Bent Over Barbell Row','바벨 로우'],['Dumbbell Row','덤벨 로우'],['Chest Supported Row','체스트 서포티드 로우'],['T-Bar Row','티바 로우'],
+    ['High Row','하이 로우 머신'],['Low Row','로우 로우 머신'],['One-Arm Machine Row','원암 머신 로우'],['Straight Arm Pulldown','스트레이트 암 풀다운']]],
+  ['어깨',[['Overhead Press','바벨 오버헤드 프레스'],['Dumbbell Shoulder Press','덤벨 숄더프레스'],['Machine Shoulder Press','숄더프레스 머신'],
+    ['Overhead Smith Press','스미스 숄더프레스'],['Dumbbell Side Lateral Raise','덤벨 사이드 레터럴 레이즈'],['Machine Side Lateral Raise','사이드 레터럴 머신'],
+    ['Cable Lateral Raise','케이블 레터럴 레이즈'],['Rear Delt Fly','리어 델트 플라이'],['Face Pull','페이스 풀'],['Dumbbell Front Raise','덤벨 프론트 레이즈'],
+    ['Dumbbell Shrug','덤벨 슈러그'],['Barbell Shrug','바벨 슈러그']]],
+  ['팔',[['Dumbbell Curl','덤벨 컬'],['Barbell Curl','바벨 컬'],['Machine Curl','바이셉 컬 머신'],['Preacher Curl','프리처 컬'],['Hammer Curl','해머 컬'],
+    ['Cable Curl','케이블 컬'],['Cable Push Down','케이블 푸시다운'],['Triceps Rope Pushdown','로프 푸시다운'],
+    ['Overhead Triceps Extension','오버헤드 트라이셉스 익스텐션'],['Lying Triceps Extension','라잉 트라이셉스 익스텐션']]],
+  ['하체전면',[['Barbell Back Squat','바벨 스쿼트'],['Smith Machine Squat','스미스 스쿼트'],['Hack Squat','핵 스쿼트'],['Leg Press','레그 프레스'],
+    ['Leg Extension','레그 익스텐션'],['Squat Machine','스쿼트 머신 (펜듈럼·브이)'],['Bulgarian Split Squat','불가리안 스플릿 스쿼트'],
+    ['Goblet Squat','고블릿 스쿼트'],['Lunge','런지']]],
+  ['하체후면',[['Romanian Deadlift','루마니안 데드리프트'],['Conventional Deadlift','컨벤셔널 데드리프트'],['Lying Leg Curl','라잉 레그컬'],
+    ['Seated Leg Curl','시티드 레그컬'],['Hip Thruster','힙 쓰러스트'],['Glute Machine','글루트 킥백 머신'],['Adductor Machine','이너 타이 (내전근)'],
+    ['Abductor Machine','아웃 타이 (외전근)'],['Back Extension','백 익스텐션'],['Good Morning','굿모닝'],
+    ['Standing Calf Raise','스탠딩 카프 레이즈'],['Seated Calf Raise','시티드 카프 레이즈']]],
+  ['코어',[['Cable Crunch','케이블 크런치'],['Machine Abs','복근 머신'],['Hanging Leg Raise','행잉 레그레이즈'],['Crunch','크런치'],['Ab Rollout','앱 롤아웃']]],
+  ['유산소',[['Treadmill','러닝머신'],['Incline Walk','인클라인 걷기'],['Stationary Bike','실내 자전거'],['Stairmaster','천국의 계단'],
+    ['Rowing Machine','로잉 머신'],['Elliptical','일립티컬']]],
+];
+const GROUP_LABEL={'하체전면':'하체 앞','하체후면':'하체 뒤'};
+function groupLabel(g){ return GROUP_LABEL[g]||g||'기타'; }
+const CAT_GROUP={}, KO={};
+FREE_CATALOG.forEach(([g,list])=>list.forEach(([en,ko])=>{ CAT_GROUP[en]=g; KO[en]=ko; }));
+// 같은 운동의 다른 표기 → 기록명 하나로 (지난 기록·1RM 계산이 끊기지 않도록)
+const ALIAS={'Barbell Squat':'Barbell Back Squat','Flat Barbell Bench Press':'Flat Bench Press','OHP':'Overhead Press',
+  'Assisted-Pull Up':'Assisted Pull-Up','Incline Barbell Press':'Incline Bench Press'};
+function canon(name){ return ALIAS[name]||name; }
+function koOf(name){ return KO[canon(name)]||''; }
+function exLabel(name){ return name; } // 운동 이름은 영문으로 표시
+function isCardio(name){ return groupOf(name)==='유산소'; }
+function customEx(){ try{ return (state&&state.customEx)||{}; }catch(e){ return {}; } } // 내가 직접 추가한 운동 {이름: 부위}
+
 function groupOf(name){
   if(EX_GROUP[name]) return EX_GROUP[name];
+  if(CAT_GROUP[canon(name)]) return CAT_GROUP[canon(name)];
+  const cu=customEx();
+  if(Object.prototype.hasOwnProperty.call(cu,name)) return cu[name]||null;
   for(const[g,list] of Object.entries(MUSCLE_GROUPS)){ if(list.some(x=>norm(x)===norm(name))) return g; }
   return null;
 }
@@ -365,20 +449,41 @@ function loadState(){
   if(!s){ s=seedState(); }
   return s;
 }
-let cloudTimer=null, syncEl=null;
+let cloudTimer=null, syncEl=null, saveSeq=0;
+// 헬스장처럼 신호가 약한 곳에서 업로드가 실패한 기록을 보호한다.
+//  · LS_DIRTY : 아직 클라우드에 못 올린 변경이 있음
+//  · LS_SYNCED: 이 기기의 데이터가 클라우드와 한 번 이상 맞춰졌음
+//  · cloudReady: 이번 실행에서 클라우드를 먼저 읽기 전에는 업로드하지 않는다
+//    (새 기기 첫 로그인 때 빈 초기 데이터가 클라우드 기록을 덮어쓰지 않도록)
+const LS_DIRTY='ybk_dirty', LS_SYNCED='ybk_synced';
+let cloudReady=false;
 function saveState(s){
+  s.savedAt=Date.now(); saveSeq++;
   localStorage.setItem(LS, JSON.stringify(s));
-  if(CLOUD && authUser){ scheduleCloudSave(); }
+  if(CLOUD && authUser){ localStorage.setItem(LS_DIRTY,'1'); scheduleCloudSave(); }
 }
 function scheduleCloudSave(){ clearTimeout(cloudTimer); setSync('saving'); cloudTimer=setTimeout(pushCloud, 1200); }
 async function pushCloud(){
-  if(!CLOUD||!authUser) return;
+  if(!CLOUD||!authUser||!cloudReady) return; // 클라우드를 읽은 뒤에만 올린다 (변경은 로컬·dirty로 보존)
+  clearTimeout(cloudTimer); cloudTimer=null;
+  const seq=saveSeq;
   try{
     const {error}= await sb.from('app_data').upsert(
       {user_key:authUser.key, data:state, updated_at:new Date().toISOString()},{onConflict:'user_key'});
-    setSync(error?'error':'saved');
-  }catch(e){ setSync('error'); }
+    if(error) throw error;
+    if(seq===saveSeq) localStorage.removeItem(LS_DIRTY);
+    localStorage.setItem(LS_SYNCED,'1');
+    setSync('saved');
+  }catch(e){
+    setSync('error');
+    if(!cloudTimer) cloudTimer=setTimeout(pushCloud, 20000); // 20초 뒤 재시도
+  }
 }
+// 앱을 닫거나 다른 앱으로 갈 때 대기 중인 저장을 바로 올리고, 네트워크가 돌아오면 재시도
+document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='hidden' && cloudTimer) pushCloud(); });
+window.addEventListener('online',()=>{
+  if(!CLOUD||!authUser) return;
+  if(!cloudReady) syncFromCloud(); else if(localStorage.getItem(LS_DIRTY)==='1') pushCloud(); });
 // 네트워크가 느리거나 막혀도 앱이 멈추지 않도록 타임아웃을 둔다
 function withTimeout(promise, ms){
   return Promise.race([promise,
@@ -390,11 +495,29 @@ async function pullCloud(){
     const {data,error}= await withTimeout(
       sb.from('app_data').select('data').eq('user_key',authUser.key).maybeSingle(), 8000);
     if(error) throw error;
-    if(data && data.data){ state=data.data; if(!state.overrides)state.overrides={}; localStorage.setItem(LS,JSON.stringify(state)); }
-    else { await pushCloud(); } // 최초 로그인: 현재(로컬/시드) 상태 업로드
-    setSync('saved');
-  }catch(e){ setSync('error'); }
+    const cloud = data && data.data;
+    const dirty = localStorage.getItem(LS_DIRTY)==='1';
+    const localWins = !cloud || (dirty && localStorage.getItem(LS_SYNCED)==='1' && (state.savedAt||0) >= (cloud.savedAt||0));
+    cloudReady=true;
+    if(localWins){ await pushCloud(); return; } // 최초 업로드, 또는 못 올린 로컬 기록이 더 최신 → 로컬을 올림
+    // 클라우드를 쓰되, 못 올린 변경이 있었다면 이 기기에만 있는 자유 운동 기록·진행 중 운동은 살린다
+    const merged = dirty ? mergeUnsynced(cloud, state) : 0;
+    state=cloud; if(!state.overrides)state.overrides={};
+    localStorage.setItem(LS,JSON.stringify(state)); localStorage.removeItem(LS_DIRTY); localStorage.setItem(LS_SYNCED,'1');
+    if(merged) saveState(state); else setSync('saved');
+  }catch(e){
+    setSync('error');
+    setTimeout(()=>{ if(!cloudReady) syncFromCloud(); }, 30000); // 30초 뒤 다시 시도
+  }
 }
+function mergeUnsynced(cloud, local){
+  let n=0; cloud.logs=cloud.logs||{};
+  Object.entries(local.logs||{}).forEach(([id,l])=>{ if(l&&l.free&&!cloud.logs[id]){ cloud.logs[id]=l; n++; } });
+  if(local.active && !cloud.active){ cloud.active=local.active; n++; }
+  if(local.customEx) cloud.customEx=Object.assign({},local.customEx,cloud.customEx||{});
+  return n;
+}
+async function syncFromCloud(){ await pullCloud(); applyProgramState(); renderAll(); }
 function setSync(st){ if(!syncEl) syncEl=document.getElementById('syncDot'); if(!syncEl) return;
   const m={saving:['●','var(--warn)','저장 중'],saved:['●','var(--ok)','동기화됨'],error:['●','var(--bad)','동기화 오류'],local:['●','var(--mut)','로컬']};
   const x=m[st]||m.local; syncEl.style.color=x[1]; syncEl.title=x[2]; }
@@ -523,6 +646,7 @@ function cellVal(sid,exName,si,field){ const dk=state.draft[sid]||{}; return (dk
 
 /* ===== Render: session selector ===== */
 function renderSess(){
+  if(isFree()) return renderFreeHeader();
   const s=SESSIONS[state.currentIdx];
   const done = state.logs[s.id] && state.logs[s.id].completed;
   const el=document.getElementById('sessSel');
@@ -540,36 +664,13 @@ function navSess(dir){ let n=state.currentIdx+dir; if(n<0)n=0; if(n>=SESSIONS.le
 
 /* ===== Render: today ===== */
 function renderToday(){
+  if(isFree()) return renderFree();
   const s=SESSIONS[state.currentIdx];
   const day=state.daily[todayISO()]||{};
   const completed = state.logs[s.id] && state.logs[s.id].completed;
   let html='';
 
-  // condition card
-  html+=`<div class="card">
-    <div class="bwrow">
-      <label>오늘 체중</label>
-      <div class="bw-input">
-        <input type="number" inputmode="decimal" step="0.1" placeholder="71.8" value="${day.bw??''}"
-          oninput="saveDaily('bw',this.value)"><span class="unit">kg</span>
-      </div>
-    </div>
-    <div class="collapse-h" onclick="toggleCond()">
-      <h3 style="margin:6px 0 0">컨디션 기록 (선택)</h3>
-      <span class="chev ${condOpen?'open':''}" id="condChev">▸</span>
-    </div>
-    <div id="condBody" class="${condOpen?'':'hidden'}">
-      <div class="metrics">
-        ${metricSel('sleep','수면(h)',day.sleep,[4,5,6,7,8,9,10],'h')}
-        ${metricSel('nutri','영양',day.nutri)}
-        ${metricSel('moti','동기',day.moti)}
-        ${metricSel('conf','자신감',day.conf)}
-        ${metricSel('stress','스트레스',day.stress)}
-        ${metricSel('fatigue','피로도',day.fatigue)}
-      </div>
-    </div>
-  </div>`;
-
+  html+=conditionCard(day);
   html+=nutriSummaryCard();
 
   // exercises
@@ -592,6 +693,32 @@ function renderToday(){
   </div>`;
 
   document.getElementById('view-today').innerHTML=html;
+}
+// 오늘 체중 + 컨디션 카드 (두 모드 공통)
+function conditionCard(day){
+  return `<div class="card">
+    <div class="bwrow">
+      <label>오늘 체중</label>
+      <div class="bw-input">
+        <input type="number" inputmode="decimal" step="0.1" placeholder="71.8" value="${day.bw??''}"
+          oninput="saveDaily('bw',this.value)"><span class="unit">kg</span>
+      </div>
+    </div>
+    <div class="collapse-h" onclick="toggleCond()">
+      <h3 style="margin:6px 0 0">컨디션 기록 (선택)</h3>
+      <span class="chev ${condOpen?'open':''}" id="condChev">▸</span>
+    </div>
+    <div id="condBody" class="${condOpen?'':'hidden'}">
+      <div class="metrics">
+        ${metricSel('sleep','수면(h)',day.sleep,[4,5,6,7,8,9,10],'h')}
+        ${metricSel('nutri','영양',day.nutri)}
+        ${metricSel('moti','동기',day.moti)}
+        ${metricSel('conf','자신감',day.conf)}
+        ${metricSel('stress','스트레스',day.stress)}
+        ${metricSel('fatigue','피로도',day.fatigue)}
+      </div>
+    </div>
+  </div>`;
 }
 let condOpen=false;
 function toggleCond(){ condOpen=!condOpen;
@@ -751,6 +878,362 @@ function finishSession(){
   renderAll(); window.scrollTo(0,0);
 }
 
+/* ===== 자유 운동 모드 =====
+   정해진 프로그램 없이 그날 하고 싶은 운동(빈 기구)을 바로 골라 기록한다.
+   state.mode   : 'free'(기본) | 'program'(16주 프로그램)
+   state.active : 진행 중인 운동 {id, startAt, lastSetAt, exercises:[{name, sets:[{load,reps,rpe | min, done, at}]}]}
+                  기록 수정 중이면 editing:true, endAt 포함
+   종료 시 state.logs[id] = {sessionId:id, free:true, date, startAt, endAt, sets:[...], completed:true}
+   (startAt·endAt은 ms 타임스탬프, ✓ 체크한 세트만 저장) */
+function isFree(){ return (state.mode||'free')==='free'; }
+function setMode(m){
+  state.mode=m; saveState(state); closeModal();
+  switchTab(curTab); renderAll(); window.scrollTo(0,0);
+  toast(m==='free'?'자유 운동 모드':'16주 프로그램 모드');
+}
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function ymdOf(ms){ const d=new Date(ms); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function hmOf(ms){ const d=new Date(ms); return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0'); }
+function atHM(dateISO,hmStr){ const[h,m]=String(hmStr).split(':').map(Number); const d=new Date(dateISO+'T00:00'); d.setHours(h||0,m||0,0,0); return d.getTime(); }
+function durMin(a,b){ return Math.max(0,Math.round((b-a)/60000)); }
+function durText(min){ return min>=60?`${Math.floor(min/60)}시간 ${min%60}분`:`${min}분`; }
+function clock(sec){ sec=Math.max(0,Math.floor(sec)); const h=Math.floor(sec/3600), m=Math.floor(sec%3600/60), s=sec%60;
+  return (h?h+':'+String(m).padStart(2,'0'):String(m))+':'+String(s).padStart(2,'0'); }
+function setText(st){
+  if(st.min!=null) return st.min+'분';
+  if(st.load!=null && st.reps!=null) return st.load+'×'+st.reps;
+  if(st.load!=null) return st.load+'kg';
+  if(st.reps!=null) return st.reps+'회';
+  return '-';
+}
+
+/* 기록 조회: 최신순 정렬, 운동별 지난 기록 */
+function sortedLogs(){
+  return Object.entries(state.logs).map(([id,l])=>({id,l})).filter(x=>x.l&&Array.isArray(x.l.sets))
+    .sort((a,b)=>{ const da=a.l.date||'', db=b.l.date||''; if(da!==db) return da<db?1:-1; return (b.l.startAt||0)-(a.l.startAt||0); });
+}
+function lastPerfIndex(excludeId){ // {기록명: {date, sets}} — 운동마다 가장 최근 1회
+  const idx={};
+  sortedLogs().forEach(({id,l})=>{ if(id===excludeId) return;
+    const seen={};
+    l.sets.forEach(st=>{ const c=canon(st.exercise); if(idx[c]&&!seen[c]) return;
+      if(!idx[c]){ idx[c]={date:l.date,sets:[]}; seen[c]=true; }
+      idx[c].sets.push(st); });
+  });
+  Object.values(idx).forEach(v=>v.sets.sort((a,b)=>a.setIndex-b.setIndex));
+  return idx;
+}
+function lastPerf(name,excludeId){ return lastPerfIndex(excludeId)[canon(name)]||null; }
+function recentExercises(limit){
+  const seen=new Set(), out=[];
+  sortedLogs().forEach(({l})=>l.sets.forEach(st=>{ const c=canon(st.exercise); if(!seen.has(c)){ seen.add(c); out.push(c); } }));
+  return out.slice(0,limit);
+}
+function todayFreeLogs(){ return sortedLogs().filter(x=>x.l.free&&x.l.date===todayISO()).reverse(); }
+
+/* 시작 · 종료 */
+function startFree(silent){
+  if(state.active) return;
+  const now=Date.now(), d=new Date(now), p2=n=>String(n).padStart(2,'0');
+  const id='F'+ymdOf(now).replace(/-/g,'')+'-'+p2(d.getHours())+p2(d.getMinutes())+p2(d.getSeconds());
+  state.active={id,startAt:now,exercises:[]};
+  saveState(state); switchTab('today'); renderSess();
+  if(!silent) toast(`운동 시작 ${hmOf(now)}`);
+}
+function setFreeStart(v){
+  const a=state.active; if(!a||!/^\d{1,2}:\d{2}$/.test(v)) return;
+  let t=atHM(ymdOf(a.startAt),v);
+  if(t>Date.now()) t-=86400000; // 자정을 넘겨 운동 중일 때 → 전날 시각
+  a.startAt=t; saveState(state); renderSess(); toast('시작 시각 '+v);
+}
+function collectSets(a){ // ✓ 체크한 세트만
+  const sets=[];
+  a.exercises.forEach(e=>{ const cardio=isCardio(e.name); let k=0;
+    e.sets.forEach(st=>{ if(!st.done) return; k++;
+      if(cardio) sets.push({exercise:e.name,setIndex:k,load:null,reps:null,rpe:null,min:typeof st.min==='number'?st.min:null});
+      else sets.push({exercise:e.name,setIndex:k,load:typeof st.load==='number'?st.load:null,
+        reps:parseIntReps(st.reps),rpe:(st.rpe!=null&&st.rpe!=='')?Number(st.rpe):null});
+    });
+  });
+  return sets;
+}
+function endFree(endAt){
+  const a=state.active; if(!a) return;
+  const sets=collectSets(a);
+  const pending=a.exercises.reduce((n,e)=>n+e.sets.filter(s=>!s.done).length,0);
+  if(a.editing){ // 지난 기록 세트 수정 → 시간은 그대로 두고 세트만 교체
+    if(!sets.length){
+      if(!confirm('완료 체크된 세트가 없습니다. 이 기록을 삭제할까요?')) return;
+      delete state.logs[a.id];
+    } else {
+      const lg=state.logs[a.id]||{sessionId:a.id,free:true,date:ymdOf(a.startAt),startAt:a.startAt,endAt:a.endAt,completed:true};
+      lg.sets=sets; state.logs[a.id]=lg;
+    }
+    state.active=null; saveState(state); renderAll(); window.scrollTo(0,0); toast('수정 저장됨 ✓'); return;
+  }
+  const end=endAt||Date.now();
+  if(!sets.length){
+    if(confirm('완료 체크(✓)한 세트가 없습니다.\n기록 없이 이번 운동을 끝낼까요?')){
+      state.active=null; saveState(state); renderAll(); toast('운동 종료 (기록 없음)'); }
+    return;
+  }
+  const min=durMin(a.startAt,end);
+  if(!endAt && !confirm(`운동을 종료할까요?\n${hmOf(a.startAt)} → ${hmOf(end)} · ${durText(min)} · ${sets.length}세트 저장`+
+      (pending?`\n(✓ 안 한 ${pending}세트는 저장되지 않아요)`:''))) return;
+  state.logs[a.id]={sessionId:a.id, free:true, date:ymdOf(a.startAt), startAt:a.startAt, endAt:end, sets, completed:true};
+  state.active=null; saveState(state); renderAll(); window.scrollTo(0,0);
+  toast(`운동 기록 저장 ✓ ${durText(min)} · ${sets.length}세트`);
+}
+function endFreeAt(){ // 종료를 깜빡한 운동: 종료 시각을 정해서 저장
+  const a=state.active, v=(document.getElementById('staleEnd')||{}).value; if(!a||!v) return;
+  let t=atHM(ymdOf(a.startAt),v); if(t<=a.startAt) t+=86400000; if(t>Date.now()) t=Date.now();
+  endFree(t);
+}
+function cancelFree(){
+  const a=state.active; if(!a) return;
+  if(a.editing){ state.active=null; saveState(state); renderAll(); toast('수정 취소'); return; }
+  const done=a.exercises.reduce((n,e)=>n+e.sets.filter(s=>s.done).length,0);
+  if(!confirm(done?`완료한 ${done}세트까지 이번 운동 기록을 모두 버릴까요?`:'이번 운동을 취소할까요?')) return;
+  state.active=null; saveState(state); renderAll(); toast('운동 취소됨');
+}
+
+/* 운동 · 세트 조작 */
+function addFreeEx(name){
+  name=String(name||'').trim(); if(!name) return;
+  const auto=!state.active;
+  if(auto) startFree(true);
+  const a=state.active;
+  const found=a.exercises.findIndex(e=>canon(e.name)===canon(name));
+  if(found>=0){ closeModal(); renderToday(); scrollToEx(found); toast('이미 추가된 운동이에요'); return; }
+  const cardio=isCardio(name), lp=lastPerf(name,a.id);
+  // 지난번 세트 구성을 그대로 채워 둔다 → 같으면 ✓만 누르면 됨
+  const sets = (lp&&lp.sets.length)
+    ? lp.sets.slice(0,6).map(st=>cardio?{min:st.min!=null?st.min:null}:{load:st.load!=null?st.load:null,reps:st.reps!=null?st.reps:null})
+    : [cardio?{min:null}:{load:null,reps:null}];
+  a.exercises.push({name,sets});
+  saveState(state); closeModal(); renderAll(); scrollToEx(a.exercises.length-1);
+  toast(auto?`운동 시작 ${hmOf(a.startAt)} · ${exLabel(name)}`:`${exLabel(name)} 추가`);
+}
+function addCustomEx(name,g){
+  name=String(name||'').trim(); if(!name) return;
+  if(!CAT_GROUP[canon(name)]){ if(!state.customEx) state.customEx={}; state.customEx[name]=(g&&g!=='기타'&&g!=='최근')?g:null; }
+  addFreeEx(name);
+}
+function scrollToEx(i){ setTimeout(()=>{ const el=document.getElementById('fx'+i); if(el) el.scrollIntoView({behavior:'smooth',block:'center'}); },60); }
+function frEx(i){ const a=state.active; return a?a.exercises[i]:null; }
+function frSetOf(i,j){ const e=frEx(i); return e?e.sets[j]:null; }
+function frCell(i,j,field,val){ const st=frSetOf(i,j); if(!st) return;
+  if(val===undefined) delete st[field]; else st[field]=val; saveState(state); }
+function recalcLastSet(){ const a=state.active; if(!a) return; let m=0;
+  a.exercises.forEach(e=>e.sets.forEach(s=>{ if(s.done&&s.at>m) m=s.at; })); a.lastSetAt=m||null; }
+function frDone(i,j){
+  const st=frSetOf(i,j); if(!st) return;
+  st.done=!st.done; if(st.done) st.at=Date.now(); else delete st.at;
+  recalcLastSet(); saveState(state); renderToday(); renderSess();
+}
+function frAddSet(i){
+  const e=frEx(i); if(!e) return; const last=e.sets[e.sets.length-1]||{};
+  e.sets.push(isCardio(e.name)?{min:last.min!=null?last.min:null}:{load:last.load!=null?last.load:null,reps:last.reps!=null?last.reps:null});
+  saveState(state); renderToday();
+}
+function frDelSet(i){
+  const e=frEx(i); if(!e||e.sets.length<=1) return; const last=e.sets[e.sets.length-1];
+  if(last.done && !confirm('완료 체크한 마지막 세트를 지울까요?')) return;
+  e.sets.pop(); recalcLastSet(); saveState(state); renderToday(); renderSess();
+}
+function removeFreeEx(i){
+  const e=frEx(i); if(!e) return;
+  const done=e.sets.filter(s=>s.done).length;
+  if(!confirm(done?`${exLabel(e.name)} — 완료한 ${done}세트까지 빼버릴까요?`:`${exLabel(e.name)}을(를) 목록에서 뺄까요?`)) return;
+  state.active.exercises.splice(i,1); recalcLastSet(); saveState(state); renderToday(); renderSess();
+}
+
+/* 화면: 상단 바 (시작 버튼 / 경과 시간 · 휴식 타이머 / 종료 버튼) */
+function restText(){ const a=state.active; return (a&&a.lastSetAt)?` · 휴식 <span class="rest">${clock((Date.now()-a.lastSetAt)/1000)}</span>`:''; }
+function renderFreeHeader(){
+  const el=document.getElementById('sessSel'); el.className='frbar';
+  const a=state.active;
+  if(a && a.editing){
+    const d=ymdOf(a.startAt);
+    el.innerHTML=`<div class="frpill edit"><div class="l1">✏️ 기록 수정 중</div>
+        <div class="l2">${fmtDate(d)} (${dows(d)}) ${hmOf(a.startAt)}${a.endAt?'–'+hmOf(a.endAt):''}</div></div>
+      <button class="frbtn save" onclick="endFree()">저장</button>`;
+  } else if(a){
+    el.innerHTML=`<div class="frpill live"><div class="l1">⏱ <span id="frElapsed">${clock((Date.now()-a.startAt)/1000)}</span></div>
+        <div class="l2">${hmOf(a.startAt)} 시작<span id="frRest">${restText()}</span></div></div>
+      <button class="frbtn stop" onclick="endFree()">■ 종료</button>`;
+  } else {
+    const td=todayFreeLogs();
+    el.innerHTML=`<div class="frpill"><div class="l1">${td.length?'오늘 운동 완료 ✓':'운동 전'}</div>
+        <div class="l2">${td.length?td.map(x=>hmOf(x.l.startAt)+'–'+hmOf(x.l.endAt)).join(', '):'자유 운동 · 하고 싶은 운동을 바로 기록'}</div></div>
+      <button class="frbtn" onclick="startFree()">▶ 시작</button>`;
+  }
+}
+setInterval(()=>{ // 경과 시간 · 휴식 타이머만 갱신 (입력 중인 칸은 건드리지 않음)
+  if(!isFree()||!state.active||state.active.editing) return;
+  const e=document.getElementById('frElapsed'); if(e) e.textContent=clock((Date.now()-state.active.startAt)/1000);
+  const r=document.getElementById('frRest'); if(r) r.innerHTML=restText();
+},1000);
+
+/* 화면: 오늘 탭 (자유 운동) */
+function renderFree(){
+  const a=state.active, day=state.daily[todayISO()]||{};
+  let html='';
+  if(a){
+    if(!a.editing && Date.now()-a.startAt>5*3600*1000){ // 종료를 깜빡하고 5시간 넘게 지난 경우
+      const def=a.lastSetAt?a.lastSetAt+5*60000:a.startAt+60*60000;
+      html+=`<div class="card" style="border-color:var(--warn)">
+        <h3 style="color:var(--warn)">⚠️ ${fmtDate(ymdOf(a.startAt))} ${hmOf(a.startAt)}에 시작한 운동이 아직 진행 중이에요</h3>
+        <div class="timecard"><span>실제 종료</span><input id="staleEnd" type="time" value="${hmOf(def)}">
+          <button class="frbtn stop" style="height:40px;margin-left:auto" onclick="endFreeAt()">이 시각으로 종료</button></div></div>`;
+    }
+    const nDone=a.exercises.reduce((n,e)=>n+e.sets.filter(s=>s.done).length,0);
+    html+=`<div class="card timecard">
+      ${a.editing?`<span>${hmOf(a.startAt)} → ${a.endAt?hmOf(a.endAt):'-'}</span><span class="muted" style="margin:0">시간은 기록 탭에서 수정</span>`
+        :`<span>시작</span><input type="time" value="${hmOf(a.startAt)}" onchange="setFreeStart(this.value)"><span>→ 진행 중</span>`}
+      <span style="margin-left:auto;white-space:nowrap">${a.exercises.length}종목 · ✓${nDone}세트</span></div>`;
+    if(!a.exercises.length) html+=`<div class="empty" style="padding:22px 10px">아래 <b style="color:var(--txt)">+ 운동 추가</b>를 눌러<br>지금 할 운동(빈 기구)을 고르세요.</div>`;
+    const lpi=lastPerfIndex(a.id);
+    a.exercises.forEach((e,i)=> html+=renderFreeEx(e,i,lpi[canon(e.name)]));
+    html+=`<button class="addbtn" onclick="openPicker()">+ 운동 추가</button>`;
+    html+=`<div class="finishbar">
+      <button class="bigbtn ${a.editing?'':'done'}" onclick="endFree()">${a.editing?'✓ 수정 저장':'■ 운동 종료 · 기록 저장'}</button>
+      <button class="bigbtn ghost" style="margin-top:8px" onclick="cancelFree()">${a.editing?'수정 취소':'운동 취소 (기록 버리기)'}</button></div>`;
+    html+=conditionCard(day)+nutriSummaryCard();
+  } else {
+    html+=`<button class="startbig" onclick="startFree()">▶ 운동 시작</button>
+      <div class="muted" style="margin:0 0 4px">시작 시각이 기록돼요. 바로 <b>+ 운동 추가</b>를 눌러도 그때 시작됩니다.</div>
+      <button class="addbtn" onclick="openPicker()">+ 운동 추가</button>`;
+    const td=todayFreeLogs();
+    if(td.length){
+      html+=`<div class="sectlabel">오늘 한 운동</div><div class="donelist">`+td.map(({id,l})=>{
+        const nEx=new Set(l.sets.map(x=>x.exercise)).size;
+        return `<div class="hcard" onclick="openLogEdit(${jstr(id)})"><div class="top">
+          <b>✓ ${hmOf(l.startAt)}–${hmOf(l.endAt)} · ${durText(durMin(l.startAt,l.endAt))}</b>
+          <span class="d">${nEx}종목 ${l.sets.length}세트 ✏️</span></div>
+          <div class="sets-sm">${[...new Set(l.sets.map(x=>exLabel(x.exercise)))].map(esc).join(' · ')}</div></div>`; }).join('')+`</div>`;
+    }
+    html+=conditionCard(day)+nutriSummaryCard();
+  }
+  document.getElementById('view-today').innerHTML=html;
+}
+function frRpe(i,j,cur){
+  let o='<option value="">–</option>';
+  for(let r=6;r<=10;r+=0.5){ o+=`<option value="${r}" ${String(cur)===String(r)?'selected':''}>${r}</option>`; }
+  return `<select class="rpe-sel" onchange="frCell(${i},${j},'rpe',numv(this.value))">${o}</select>`;
+}
+function renderFreeEx(e,i,lp){
+  const cardio=isCardio(e.name);
+  const done=e.sets.filter(s=>s.done).length;
+  let rows = cardio
+    ? `<div class="sethdr cardio"><div class="c">#</div><div class="c">시간 (분)</div><div class="c">✓</div></div>`
+    : `<div class="sethdr"><div class="c">#</div><div class="c">중량 kg</div><div class="c">반복</div><div class="c">RPE</div><div class="c">✓</div></div>`;
+  e.sets.forEach((st,j)=>{
+    const btn=`<button class="donebtn ${st.done?'on':''}" aria-label="${j+1}세트 완료" onclick="frDone(${i},${j})"></button>`;
+    if(cardio) rows+=`<div class="setrow cardio ${st.done?'done':''}"><div class="setno">${j+1}</div>
+        <div class="cell"><input type="number" inputmode="numeric" placeholder="분" value="${st.min??''}" oninput="frCell(${i},${j},'min',numv(this.value))"></div>${btn}</div>`;
+    else rows+=`<div class="setrow ${st.done?'done':''}"><div class="setno">${j+1}</div>
+        <div class="cell"><input type="number" inputmode="decimal" step="any" placeholder="kg" value="${st.load??''}" oninput="frCell(${i},${j},'load',numv(this.value))"></div>
+        <div class="cell"><input type="number" inputmode="numeric" placeholder="회" value="${st.reps??''}" oninput="frCell(${i},${j},'reps',numv(this.value))"></div>
+        <div class="cell">${frRpe(i,j,st.rpe)}</div>${btn}</div>`;
+  });
+  rows+=`<div class="setctl"><button onclick="frDelSet(${i})" ${e.sets.length<=1?'disabled':''}>− 세트</button>
+    <div class="cnt"><b>${done}/${e.sets.length}</b> 완료</div>
+    <button class="addset" onclick="frAddSet(${i})">+ 세트</button></div>`;
+  const lpText = lp?`지난번${lp.date?' '+fmtDate(lp.date):''}: ${lp.sets.map(setText).join(' · ')}`:'첫 기록';
+  return `<div class="ex ${cardio?'cardio':'work'}" id="fx${i}">
+    <div class="exhead"><div style="min-width:0"><div class="exname">${esc(exLabel(e.name))}<span class="gtag">${groupLabel(groupOf(e.name))}</span></div>
+      <div class="exmeta">${lpText}</div></div>
+      <button class="xbtn" aria-label="운동 빼기" onclick="removeFreeEx(${i})">✕</button></div>
+    <div class="sets">${rows}</div></div>`;
+}
+
+/* 운동 선택 시트: 최근 운동 · 부위별 목록 · 한글/영문 검색 · 새 운동 직접 추가 */
+let pkGroup='최근';
+function openPicker(){
+  showModal(`<h3>운동 추가</h3>
+    <input id="pkQ" class="pkq" type="search" autocomplete="off" placeholder="검색 또는 새 운동 이름 (예: leg press, 레그)" oninput="renderPicker()">
+    <div id="pkBody"></div>
+    <div class="row" style="margin-top:12px"><button onclick="closeModal()">닫기</button></div>`);
+  const sh=document.querySelector('#modalRoot .sheet'); if(sh) sh.classList.add('tall');
+  renderPicker();
+}
+const PK_GROUPS=['최근',...FREE_CATALOG.map(x=>x[0]),'기타'];
+function allExNames(){ // 기록명 → 부위 (목록 + 내가 추가한 운동 + 지난 기록에 있는 운동)
+  const m=new Map();
+  FREE_CATALOG.forEach(([g,list])=>list.forEach(([en])=>m.set(en,g)));
+  const fix=g=>PK_GROUPS.includes(g)?g:'기타';
+  Object.entries(customEx()).forEach(([n,g])=>{ if(!m.has(n)) m.set(n,fix(g)); });
+  sortedLogs().forEach(({l})=>l.sets.forEach(st=>{ const c=canon(st.exercise); if(!m.has(c)) m.set(c,fix(groupOf(c))); }));
+  return m;
+}
+function sKey(s){ return String(s||'').toLowerCase().replace(/[^a-z0-9가-힣ㄱ-ㅎ]/g,''); }
+function matchQ(name,q){ const k=sKey(q); return !k || sKey(name).includes(k) || sKey(koOf(name)).includes(k); }
+function renderPicker(){
+  const body=document.getElementById('pkBody'); if(!body) return;
+  const qt=((document.getElementById('pkQ')||{}).value||'').trim();
+  const a=state.active, inSess=new Set(((a&&a.exercises)||[]).map(e=>canon(e.name)));
+  const all=allExNames(), lpi=lastPerfIndex(a&&a.id);
+  let html=`<div class="chips">${PK_GROUPS.map(g=>`<button class="chip ${g===pkGroup?'on':''}" onclick="pkGroup=${jstr(g)};renderPicker()">${groupLabel(g)}</button>`).join('')}</div>`;
+  let names;
+  if(qt){
+    names=[...all.keys()].filter(n=>matchQ(n,qt));
+    const exact=names.some(n=>sKey(n)===sKey(qt)||sKey(koOf(n))===sKey(qt));
+    if(!exact){
+      const g=pkGroup==='최근'?'기타':pkGroup;
+      html+=`<button class="pknew" onclick="addCustomEx(${jstr(qt)},${jstr(g)})">➕ 새 운동 “${esc(qt)}” 추가 · ${groupLabel(g)}</button>`;
+      if(pkGroup==='최근') html+=`<div class="muted" style="margin:-4px 0 10px;text-align:left">위에서 부위를 먼저 누르면 그 부위로 저장돼요.</div>`;
+    }
+  } else if(pkGroup==='최근'){
+    names=recentExercises(12);
+    if(!names.length) html+=`<div class="muted" style="margin-bottom:8px">아직 기록이 없어요. 위에서 부위를 골라 보세요.</div>`;
+  } else {
+    names=[...all.entries()].filter(([,g])=>g===pkGroup).map(([n])=>n);
+    if(!names.length) html+=`<div class="muted" style="margin-bottom:8px">직접 추가한 운동이 여기에 모여요. 위 검색칸에 이름을 적어 추가하세요.</div>`;
+  }
+  html+=`<div class="pkgrid">${names.slice(0,40).map(n=>{ const lp=lpi[canon(n)], on=inSess.has(canon(n));
+    return `<button class="pkitem ${on?'in':''}" onclick="addFreeEx(${jstr(n)})">
+      <span class="k">${esc(n)}${on?' ✓':''}</span>
+      ${lp?`<span class="lp">${lp.date?fmtDate(lp.date)+' · ':''}${setText(lp.sets[0])}${lp.sets.length>1?` 외 ${lp.sets.length-1}세트`:''}</span>`:''}</button>`; }).join('')}</div>`;
+  body.innerHTML=html;
+}
+
+/* 지난 자유 운동 기록: 날짜·시작·종료 시각 수정, 세트 수정, 삭제 */
+function openLogEdit(id){
+  const l=state.logs[id]; if(!l) return;
+  const st=l.startAt||atHM(l.date,'00:00'), en=l.endAt||st;
+  showModal(`<h3>✏️ ${fmtDate(l.date)} (${dows(l.date)}) 운동 기록</h3>
+    <label class="f">날짜</label><input class="f" id="leDate" type="date" value="${l.date}">
+    <div class="twogrid" style="margin-top:2px">
+      <div><label class="f">시작</label><input class="f" id="leStart" type="time" value="${hmOf(st)}"></div>
+      <div><label class="f">종료</label><input class="f" id="leEnd" type="time" value="${hmOf(en)}"></div></div>
+    <div class="row" style="margin-top:12px"><button class="close" onclick="saveLogTime(${jstr(id)})">시간 저장</button></div>
+    <div class="row"><button onclick="editLogSets(${jstr(id)})">🏋️ 세트 수정하기</button></div>
+    <div class="row"><button class="danger" onclick="deleteLog(${jstr(id)})">🗑️ 이 기록 삭제</button></div>
+    <div class="row"><button onclick="closeModal()">닫기</button></div>`);
+}
+function saveLogTime(id){
+  const l=state.logs[id]; if(!l) return;
+  const d=document.getElementById('leDate').value, s=document.getElementById('leStart').value, e=document.getElementById('leEnd').value;
+  if(!d||!s||!e){ toast('날짜와 시각을 모두 입력하세요'); return; }
+  const st=atHM(d,s); let en=atHM(d,e); if(en<=st) en+=86400000; // 자정 넘김
+  l.date=d; l.startAt=st; l.endAt=en;
+  saveState(state); closeModal(); renderAll(); toast(`저장됨 · ${durText(durMin(st,en))}`);
+}
+function deleteLog(id){
+  if(!confirm('이 운동 기록을 삭제할까요? 되돌릴 수 없습니다.')) return;
+  delete state.logs[id]; saveState(state); closeModal(); renderAll(); toast('기록 삭제됨');
+}
+function editLogSets(id){
+  if(state.active){ toast(state.active.editing?'다른 기록을 수정 중이에요':'진행 중인 운동을 먼저 종료하세요'); return; }
+  const l=state.logs[id]; if(!l) return;
+  const exs=[], by={};
+  l.sets.forEach(st=>{ let e=by[st.exercise]; if(!e){ e=by[st.exercise]={name:st.exercise,sets:[]}; exs.push(e); }
+    e.sets.push(st.min!=null?{min:st.min,done:true}:{load:st.load,reps:st.reps,rpe:st.rpe!=null?st.rpe:undefined,done:true}); });
+  state.active={id,editing:true,startAt:l.startAt||atHM(l.date,'00:00'),endAt:l.endAt||null,exercises:exs};
+  saveState(state); closeModal(); switchTab('today'); renderSess(); toast('세트를 고친 뒤 저장을 누르세요');
+}
+
 /* ===== 영양 · 보충제 체크 =====
    state.nutriCfg: 운동·식사 시각과 보충제 양 (설정에서 변경)
    state.daily[날짜].nut: {항목id:true} · dayType: 'train'|'rest' · cardio: 분 */
@@ -765,6 +1248,7 @@ function dayTypeOf(iso){
   const d=state.daily[iso]||{};
   if(d.dayType) return d.dayType;
   if(Object.values(state.logs).some(l=>l.date===iso)) return 'train';
+  if(state.active && !state.active.editing && ymdOf(state.active.startAt)===iso) return 'train';
   return TRAIN_DOW.includes(new Date(iso+'T00:00').getDay())?'train':'rest';
 }
 function nutriItems(iso){
@@ -937,12 +1421,9 @@ function toggleCardio(){
 
 /* ===== Render: history ===== */
 function renderHistory(){
-  const cur=SESSIONS.map((s,i)=>({s,i,log:state.logs[s.id]})).filter(x=>x.log);
-  // 이전 프로그램의 기록(현재 세션 목록에 없는 id)도 보존해서 보여준다
-  const ids=new Set(SESSIONS.map(s=>s.id));
-  const old=Object.keys(state.logs).filter(id=>!ids.has(id)).map(id=>({
-    s:{id, weekTitle:'이전 프로그램', type:'pull'}, i:-1, log:state.logs[id]}));
-  const logged=cur.reverse().concat(old.sort((a,b)=>(b.log.date||'')<(a.log.date||'')?-1:1));
+  // 자유 운동·프로그램·이전 프로그램 기록을 모두 날짜 최신순으로
+  const sessById={}; SESSIONS.forEach(s=>sessById[s.id]=s);
+  const logged=sortedLogs();
   let html='';
   // bodyweight quick
   const bws=Object.entries(state.daily).filter(([d,v])=>v.bw!=null).sort((a,b)=>a[0]<b[0]?1:-1);
@@ -951,14 +1432,28 @@ function renderHistory(){
     html+=bws.slice(0,6).map(([d,v])=>`<div style="display:flex;justify-content:space-between;padding:4px 0;border-top:1px solid var(--line)"><span class="d" style="color:var(--sub);font-size:13px">${fmtDate(d)} (${dows(d)})</span><b>${v.bw} kg</b></div>`).join('');
     html+=`</div>`;
   }
-  if(!logged.length){ html+=`<div class="empty">아직 완료된 세션이 없습니다.<br>오늘 탭에서 운동을 기록해보세요.</div>`; }
-  logged.forEach(({s,log})=>{
+  if(!logged.length){ html+=`<div class="empty">아직 기록된 운동이 없습니다.<br>오늘 탭에서 운동을 기록해보세요.</div>`; }
+  logged.forEach(({id,l:log})=>{
     const work=log.sets.filter(x=>x.load!=null);
     const vol=work.reduce((a,x)=>a+(x.load*(x.reps||0)),0);
     const byEx={};
     log.sets.forEach(st=>{ (byEx[st.exercise]=byEx[st.exercise]||[]).push(st); });
     let setsHtml=Object.entries(byEx).map(([n,arr])=>
-      `<div><b>${n}</b> ${arr.map(x=>`${x.load!=null?x.load+'kg×':''}${x.reps??'-'}${x.rpe?`@${x.rpe}`:''}`).join(', ')}</div>`).join('');
+      `<div><b>${esc(exLabel(n))}</b> ${arr.map(x=>x.min!=null?x.min+'분':`${x.load!=null?x.load+'kg×':''}${x.reps??'-'}${x.rpe?`@${x.rpe}`:''}`).join(', ')}</div>`).join('');
+    if(log.free){ // 자유 운동: 시작–종료 · 운동 시간, 눌러서 수정
+      const min=(log.startAt&&log.endAt)?durMin(log.startAt,log.endAt):null;
+      html+=`<div class="hcard" style="cursor:pointer" onclick="openLogEdit(${jstr(id)})">
+        <div class="top">
+          <div><span class="pill" style="background:var(--accent);color:#160d2e">자유</span>
+            <b style="margin-left:6px">${log.startAt?hmOf(log.startAt):''}–${log.endAt?hmOf(log.endAt):''}</b>${min!=null?` <span class="d">· ${durText(min)}</span>`:''}</div>
+          <div class="d">${log.date?`${fmtDate(log.date)} (${dows(log.date)})`:''} ✏️</div>
+        </div>
+        <div class="sets-sm">${setsHtml||'<span style="color:var(--mut)">기록된 세트 없음</span>'}</div>
+        ${vol?`<div class="d" style="margin-top:6px">${log.sets.length}세트 · 총 볼륨 <b style="color:var(--txt)">${Math.round(vol).toLocaleString()} kg</b></div>`:''}
+      </div>`;
+      return;
+    }
+    const s=sessById[id]||{id, weekTitle:'이전 프로그램', type:'pull'};
     html+=`<div class="hcard">
       <div class="top">
         <div><span class="pill" style="background:${s.type==='push'?'var(--push)':'var(--pull)'};color:#111">${s.id}</span>
@@ -980,11 +1475,12 @@ function renderStats(){
   const mainLabel={'Barbell Back Squat':'스쿼트','Flat Bench Press':'벤치','Romanian Deadlift':'RDL'};
   const best={}; const series={};
   Object.values(state.logs).forEach(log=>{
-    log.sets.forEach(st=>{
-      if(mains.includes(st.exercise) && st.load && st.reps){
+    (log.sets||[]).forEach(st=>{
+      const ex=canon(st.exercise); // 자유 운동에서 다른 표기로 적어도 같은 운동으로 집계
+      if(mains.includes(ex) && st.load && st.reps){
         const e=epley1RM(st.load,st.reps);
-        if(!best[st.exercise]||e>best[st.exercise].e) best[st.exercise]={e,load:st.load,reps:st.reps};
-        (series[st.exercise]=series[st.exercise]||[]).push({date:log.date,e});
+        if(!best[ex]||e>best[ex].e) best[ex]={e,load:st.load,reps:st.reps};
+        (series[ex]=series[ex]||[]).push({date:log.date,e});
       }
     });
   });
@@ -995,12 +1491,28 @@ function renderStats(){
   const bwStart=bwArr.length?bwArr[0].bw:null;
   const bwDelta=(bwNow!=null&&bwStart!=null)?(bwNow-bwStart):null;
 
-  let html=`<div class="card"><h3>진행 현황</h3>
+  const trainDays=new Set(Object.values(state.logs).filter(l=>l.completed&&l.date).map(l=>l.date));
+  const bwDeltaStat=`<div class="stat"><div class="v" style="color:${bwDelta>0?'var(--ok)':'var(--txt)'}">${bwDelta!=null?(bwDelta>0?'+':'')+bwDelta.toFixed(1):'-'}</div><div class="k">체중 변화 <span class="u">kg</span></div></div>`;
+  let html;
+  if(isFree()){ // 자유 운동: 이번 달 운동 횟수 · 평균 운동 시간 · 체중
+    const ym=todayISO().slice(0,7);
+    const monthCnt=[...trainDays].filter(d=>d.startsWith(ym)).length;
+    const timed=sortedLogs().filter(x=>x.l.startAt&&x.l.endAt).slice(0,10);
+    const avg=timed.length?Math.round(timed.reduce((a,x)=>a+durMin(x.l.startAt,x.l.endAt),0)/timed.length):null;
+    html=`<div class="card"><h3>진행 현황</h3>
+    <div class="statgrid">
+      <div class="stat"><div class="v">${monthCnt}<span class="u">회</span></div><div class="k">이번 달 운동</div></div>
+      <div class="stat"><div class="v">${avg??'-'}<span class="u">${avg!=null?'분':''}</span></div><div class="k">평균 운동 시간</div>${timed.length?`<div class="u">최근 ${timed.length}회</div>`:''}</div>
+      ${bwDeltaStat}
+    </div></div>`;
+  } else {
+    html=`<div class="card"><h3>진행 현황</h3>
     <div class="statgrid">
       <div class="stat"><div class="v">${doneCount}<span class="u">/${SESSIONS.length}</span></div><div class="k">완료 세션</div></div>
       <div class="stat"><div class="v">${bwNow??'-'}</div><div class="k">현재 체중 <span class="u">kg</span></div></div>
-      <div class="stat"><div class="v" style="color:${bwDelta>0?'var(--ok)':'var(--txt)'}">${bwDelta!=null?(bwDelta>0?'+':'')+bwDelta.toFixed(1):'-'}</div><div class="k">체중 변화 <span class="u">kg</span></div></div>
+      ${bwDeltaStat}
     </div></div>`;
+  }
 
   html+=`<div class="card"><h3>추정 1RM (Epley · 최고 기록)</h3><div class="statgrid">`;
   mains.forEach(m=>{
@@ -1010,7 +1522,6 @@ function renderStats(){
   html+=`</div></div>`;
 
   // 운동 달력 (한 달치)
-  const trainDays=new Set(Object.values(state.logs).filter(l=>l.completed&&l.date).map(l=>l.date));
   const bwDays=new Set(Object.keys(state.daily).filter(d=>state.daily[d].bw!=null));
   html+=`<div class="card">${buildCalendar(statsMonth, trainDays, bwDays)}</div>`;
 
@@ -1109,6 +1620,11 @@ function openMenu(){
     `<div class="muted" style="margin-bottom:8px">로컬 저장 모드 (로그인 미설정)</div>`;
   showModal(`<h3>설정 · 백업</h3>
     ${acct}
+    <div class="muted" style="text-align:left;margin:4px 2px 6px">기록 방식</div>
+    <div class="daytoggle" style="margin-bottom:6px">
+      <button class="${isFree()?'on':''}" onclick="setMode('free')">✍️ 자유 운동</button>
+      <button class="${isFree()?'':'on'}" onclick="setMode('program')">📋 16주 프로그램</button></div>
+    <div class="muted" style="text-align:left;margin:0 2px 12px">${isFree()?'그날 하고 싶은 운동을 바로 골라 기록합니다. 시작·종료 시각도 저장돼요.':'정해진 16주 프로그램 순서대로 기록합니다.'}</div>
     <div class="row"><button class="close" onclick="exportExcel()">📊 엑셀(.xlsx)로 운동기록 다운로드</button></div>
     <div class="row"><button onclick="importProgram()">📂 엑셀로 운동프로그램 불러오기</button></div>
     <div class="row"><button onclick="exportData()">📤 데이터 내보내기 (JSON 백업)</button></div>
@@ -1125,12 +1641,15 @@ function exportData(){
 }
 /* ===== Excel(.xlsx) export — 무의존 순수 JS ===== */
 function exportExcel(){
-  const rec=[['세션','주차','부위','날짜','운동','세트','중량(kg)','반복','RPE','추정1RM(kg)']];
-  SESSIONS.forEach(s=>{ const log=state.logs[s.id]; if(!log) return;
-    log.sets.forEach(st=>{
+  const sessById={}; SESSIONS.forEach(s=>sessById[s.id]=s);
+  const logs=sortedLogs().reverse(); // 오래된 순
+  const kindOf=(id,l)=> l.free?'자유 운동':(sessById[id]?sessById[id].weekTitle:'이전 프로그램');
+  const rec=[['날짜','시작','종료','구분','세션','부위','운동','세트','중량(kg)','반복','RPE','유산소(분)','추정1RM(kg)']];
+  logs.forEach(({id,l})=>{
+    l.sets.forEach(st=>{
       const e=(st.load&&st.reps)?Math.round(epley1RM(st.load,st.reps)*10)/10:'';
-      rec.push([s.id,s.weekTitle,groupOf(st.exercise)||'',log.date||'',st.exercise,st.setIndex,
-        st.load??'',st.reps??'',st.rpe!=null?'@'+st.rpe:'',e]);
+      rec.push([l.date||'',l.startAt?hmOf(l.startAt):'',l.endAt?hmOf(l.endAt):'',kindOf(id,l),id,groupLabel(groupOf(st.exercise)),
+        st.exercise,st.setIndex,st.load??'',st.reps??'',st.rpe!=null?'@'+st.rpe:'',st.min??'',e]);
     });
   });
   const daily=[['날짜','요일','체중(kg)','수면(h)','영양','동기','자신감','스트레스','피로도','운동일/휴식일','크레아틴','단백질 보충제(스쿱)','식단 체크','유산소(분)']];
@@ -1138,13 +1657,13 @@ function exportExcel(){
     daily.push([d,dows(d),v.bw??'',v.sleep??'',v.nutri??'',v.moti??'',v.conf??'',v.stress??'',v.fatigue??'',
       n.any?(n.train?'운동일':'휴식일'):'', n.any?(n.creatine?'O':'X'):'', n.any?n.shakes:'', n.any?`${n.done}/${n.total}`:'', v.cardio??'']);
   });
-  const summ=[['세션','주차','날짜','총세트','총볼륨(kg)']];
-  SESSIONS.forEach(s=>{ const log=state.logs[s.id]; if(!log)return;
-    const work=log.sets.filter(x=>x.load!=null);
-    const vol=work.reduce((a,x)=>a+x.load*(x.reps||0),0);
-    summ.push([s.id,s.weekTitle,log.date||'',log.sets.length,Math.round(vol)]);
+  const summ=[['날짜','시작','종료','운동시간(분)','구분','세션','종목수','총세트','총볼륨(kg)']];
+  logs.forEach(({id,l})=>{
+    const vol=l.sets.filter(x=>x.load!=null).reduce((a,x)=>a+x.load*(x.reps||0),0);
+    summ.push([l.date||'',l.startAt?hmOf(l.startAt):'',l.endAt?hmOf(l.endAt):'',(l.startAt&&l.endAt)?durMin(l.startAt,l.endAt):'',
+      kindOf(id,l),id,new Set(l.sets.map(x=>x.exercise)).size,l.sets.length,Math.round(vol)]);
   });
-  const blob=buildXlsx([{name:'운동기록',rows:rec},{name:'일일기록',rows:daily},{name:'세션요약',rows:summ}]);
+  const blob=buildXlsx([{name:'운동기록',rows:rec},{name:'일일기록',rows:daily},{name:'운동요약',rows:summ}]);
   const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
   a.download='운동기록_'+todayISO()+'.xlsx'; a.click(); closeModal(); toast('엑셀 파일 저장됨');
 }
@@ -1207,11 +1726,12 @@ function closeModal(){ document.getElementById('modalRoot').innerHTML=''; }
 function switchTab(t){ curTab=t;
   document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===t));
   ['today','nutri','history','stats'].forEach(v=> document.getElementById('view-'+v).classList.toggle('hidden',v!==t));
-  document.getElementById('sessSel').style.display = t==='today'?'flex':'none';
+  document.getElementById('sessSel').style.display = (t==='today' || (isFree() && state.active)) ? 'flex':'none';
   if(t==='today')renderToday(); if(t==='nutri')renderNutri(); if(t==='history')renderHistory(); if(t==='stats')renderStats();
   window.scrollTo(0,0);
 }
-function renderAll(){ renderSess(); renderToday(); if(curTab==='nutri')renderNutri(); if(curTab==='history')renderHistory(); if(curTab==='stats')renderStats(); }
+function renderAll(){ renderSess(); renderToday();
+  document.getElementById('sessSel').style.display = (curTab==='today' || (isFree() && state.active)) ? 'flex':'none'; if(curTab==='nutri')renderNutri(); if(curTab==='history')renderHistory(); if(curTab==='stats')renderStats(); }
 
 /* ===== Auth ===== */
 function showAuth(show){ document.getElementById('authOverlay').classList.toggle('hidden',!show); }
@@ -1241,12 +1761,13 @@ async function afterLogin(){
   showAuth(false);
   document.getElementById('hsub').textContent = authUser.email;
   applyProgramState(); renderAll();   // 로컬 캐시로 즉시 사용 가능
-  await pullCloud();                  // 클라우드 반영은 뒤따라온다
-  applyProgramState(); renderAll();
+  await syncFromCloud();              // 클라우드 반영은 뒤따라온다
 }
 async function doLogout(){
   if(CLOUD&&authUser) await pushCloud();
-  localStorage.removeItem(LS_USER); localStorage.removeItem(LS);
+  if(localStorage.getItem(LS_DIRTY)==='1' &&
+     !confirm('아직 클라우드에 올라가지 않은 기록이 있습니다.\n지금 로그아웃하면 이 기기에서 사라집니다. 계속할까요?')) return;
+  [LS_USER,LS,LS_DIRTY,LS_SYNCED].forEach(k=>localStorage.removeItem(k));
   location.reload();
 }
 
