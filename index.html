@@ -495,8 +495,8 @@ async function pushCloud(){
   clearTimeout(cloudTimer); cloudTimer=null;
   const seq=saveSeq;
   try{
-    const {error}= await sb.from('app_data').upsert(
-      {user_key:authUser.key, data:state, updated_at:new Date().toISOString()},{onConflict:'user_key'});
+    // 테이블 직접 접근 대신 키로만 읽고 쓰는 함수 사용 (supabase_setup.sql 참고)
+    const {error}= await sb.rpc('put_app_data',{p_key:authUser.key, p_data:state});
     if(error) throw error;
     if(seq===saveSeq) localStorage.removeItem(LS_DIRTY);
     localStorage.setItem(LS_SYNCED,'1');
@@ -519,10 +519,9 @@ function withTimeout(promise, ms){
 async function pullCloud(){
   if(!CLOUD||!authUser) return;
   try{
-    const {data,error}= await withTimeout(
-      sb.from('app_data').select('data').eq('user_key',authUser.key).maybeSingle(), 8000);
+    const {data,error}= await withTimeout(sb.rpc('get_app_data',{p_key:authUser.key}), 8000);
     if(error) throw error;
-    const cloud = data && data.data;
+    const cloud = (data && typeof data==='object') ? data : null;
     const dirty = localStorage.getItem(LS_DIRTY)==='1';
     const localWins = !cloud || (dirty && localStorage.getItem(LS_SYNCED)==='1' && (state.savedAt||0) >= (cloud.savedAt||0));
     cloudReady=true;
@@ -543,6 +542,14 @@ async function pullCloud(){
 //  · 진행 위치·작성 중 세트·프로그램 수정값·진행 중 시각: 이 기기 것을 반영
 function mergeUnsynced(cloud, local){
   let n=0; const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
+  // 클라우드가 예전 프로그램 버전(오래된 백업)이고 이 기기가 현재 버전이면,
+  // 진행 위치·작성 중 세트·프로그램 수정값은 이 기기 것을 그대로 쓴다 (안 그러면 버전 차이로 초기화됨)
+  const POS=['programVersion','program','currentIdx','draft','overrides','setCount','added','removed','timing'];
+  if(local.programVersion===PROGRAM_VERSION && cloud.programVersion!==PROGRAM_VERSION){
+    POS.forEach(k=>{ if(local[k]!==undefined) cloud[k]=JSON.parse(JSON.stringify(local[k])); else delete cloud[k]; }); n++;
+  }
+  // 클라우드에 아예 없는 항목(예: 영양 설정, 기록 방식)은 이 기기 것으로 채움
+  Object.keys(local).forEach(k=>{ if(cloud[k]===undefined && local[k]!==undefined && k!=='savedAt'){ cloud[k]=local[k]; n++; } });
   cloud.logs=cloud.logs||{};
   Object.entries(local.logs||{}).forEach(([id,l])=>{ const c=cloud.logs[id];
     if(l && (!c || (l.savedAt||0)>(c.savedAt||0)) && !same(c,l)){ cloud.logs[id]=l; n++; } });

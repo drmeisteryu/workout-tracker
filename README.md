@@ -55,12 +55,14 @@ python3 build.py
 `_template.html` + `program_seed.json` / `history_seed.json` / `muscle_seed.json` + (선택)`supabase.config.json` → `index.html` 생성.
 
 ## Supabase 설정
-1. supabase.com 프로젝트 생성
-2. `supabase_setup.sql` 내용을 SQL Editor에서 실행
-3. Authentication → Email → "Confirm email" 끄기(즉시 로그인용)
-4. Project Settings → API 에서 Project URL, anon public key 복사
-5. `supabase.config.json` 작성: `{"url":"https://xxx.supabase.co","anon":"eyJ..."}`
-6. `python3 build.py` 재실행 → 배포
+1. supabase.com 프로젝트 생성 (무료 프로젝트는 오래 안 쓰면 일시정지됨 → 대시보드에서 Restore)
+2. `supabase_setup.sql` 내용을 SQL Editor에서 실행 (여러 번 실행해도 안전)
+   - `app_data` 테이블 + `get_app_data` / `put_app_data` 함수 생성. 앱은 테이블을 직접 읽지 않고 이 함수만 씀
+   - 공개 키(anon)로 테이블 목록 조회·쓰기 불가, 이메일 해시 키를 아는 경우에만 그 기록에 접근
+   - 예전 이메일·비밀번호 로그인 시절 기록(`user_data`)이 있으면 처음 한 번만 옮김
+3. Project Settings → API 에서 Project URL, anon(publishable) key 복사
+4. `supabase.config.json` 작성: `{"url":"https://xxx.supabase.co","anon":"sb_publishable_..."}`
+5. `python3 build.py` 재실행 → 배포
 
 ## 배포 (GitHub Pages)
 이 폴더를 저장소 루트로 push 후, Settings → Pages → Branch: main / root 선택.
